@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist_001</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Apple (KR)" />
+    <meta property="og:title" content="iPad 10.2" />
+    <meta property="og:description" content="강력한 A13 Bionic 칩을 탑재한 iPad. 센터 스테이지 기술이 적용된 12MP 울트라 와이드 전면 카메라, True Tone 디스플레이 기술 및 64GB 저장 용량까지 갖췄습니다." />
+    <meta property="og:image" content="./images/ipad-seo.png" />
+    <meta property="og:url" content="https://apple.com/kr/ipad-10.2" />
+
+    <!--Twitter Card-->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Apple (KR)" />
+    <meta property="twitter:title" content="iPad 10.2" />
+    <meta property="twitter:description" content="강력한 A13 Bionic 칩을 탑재한 iPad. 센터 스테이지 기술이 적용된 12MP 울트라 와이드 전면 카메라, True Tone 디스플레이 기술 및 64GB 저장 용량까지 갖췄습니다." />
+    <meta property="twitter:image" content="./images/ipad-seo.png" />
+    <meta property="twitter:url" content="https://apple.com/kr/ipad-10.2" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="https://use.typekit.net/xrj2ymw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://use.typekit.net/vyc4csh.css">
+
+    <!-- GSAP & ScrollToPlugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+        integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.js" integrity="sha512-Fkp90xIgmyVqEw+i6jPbM0Hbf/Cwoo9MtVT99dLU6puijBCAX7DrZ9rmyuMcMUZOYLrPfLLnoqPgKjPZHM7Mzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Meterial Icons (화살표 아이콘을 넣기 위해 사용) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+    <!-- ScrollMagic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+    <link rel="stylesheet" href="./Artist_002_style_Web.css">
+    <script defer type="module" src="../JS/move.js"></script>
+    <script defer type="module" src="../JS/scroll.js"></script>
+    <script defer type="module" src="../JS/menuing.js"></script>
+    <script defer type="module" src="../JS/Ex002-swiper.js"></script>
+    <script defer type="module" src="../JS/Click.js"></script>
+    
+    <!-- ClickHandler.js를 불러올 때, 
+    defer type을 넣게 되면, 적용이 안됨
+    이유는 아직 못 찾음 -->
+    <script src="../JS/ClickHandler.js"></script>
+
+    <script src="../JS/modal.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="head-wrapper">
+            <header class="header-section">
+                <div class="main-header">
+
+                    <div class="header-style">
+                        <div class="logo-wrapper">
+                            <a href="../Home-Web/Home_Web.html">
+                                <img class="white-logo" src="../img/MafLogo-Green-Web.png" alt="">
+                            </a>
+                        </div>
+            
+                        <div class="header-menu">
+                        
+                            <ul class="header-ul">
+                                <a href="../Exhibition-Web/Exhibition_001_Web.html">
+                                    <li class="Ex-header">Exhibitions</li>
+                                </a>
+
+                                <a href="../Artist-Web/Artist_001.html">
+                                    <li class="At-header">Artists</li>
+                                </a>
+
+                                <a href="../News-Web/News.html">
+                                    <li class="Ne-header">News</li>
+                                </a>
+
+                                <a href="../Publication-Web/Publication.html">
+                                    <li class="Pu-header">Publication</li>
+                                </a>
+
+                                <a href="../AboutUs-Web/AboutUs.html">
+                                    <li class="AU-header">About Us</li>
+                                </a>
+
+                                <a href="javascript:void(0)">
+                                    <li class="EN">EN</li>
+                                </a>
+                            </ul>
+
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <!--
+                <div class="sub-header">
+                    <a href="/Home.html">
+                        <img class="Green-logo" src="./img/MafLogo_Green.png" alt="">
+                    </a>
+                    <img class="header-hamburger-black" src="./img/Hamburger_Menu_Black.png" alt="">
+                    <div class="clone-menu">
+                        <div class="clone-in-menu">
+                            <img class="Toggle_EN" src="./img/Toggle_EN.png" alt="" onclick={}>
+                            <img class="Toggle_Close" src="./img/Close_btn.png" alt="">
+                        </div>
+                        <ul class="clone-ul">
+                            <li class="one"><a href="./Exhibition_001.html">Exhibitions</a></li>
+                            <li class="two"><a href="javascript:void(0)">Artists</a></li>
+                            <li class="three"><a href="javascript:void(0)">News</a></li>
+                            <li class="four"><a href="javascript:void(0)">Publication</a></li>
+                            <li class="five"><a href="javascript:void(0)">About Us</a></li>
+                        </ul>
+                    </div>        
+                </div>
+                -->
+                
+                    
+                </header>
+        </section>
+
+        
+        <!------- Artist002 main-section ------->
+        <section class="main-section">
+            <div class="main-title-section">
+                <div class="main-title">
+                    <h1>Artist name</h1>
+                </div>
+                
+                <div class="sub-title">
+                    <span>Exhibitions</span>
+                    <span>|</span>
+                    <span>Works</span>
+                </div>
+            </div>
+
+            <section class="main-img-section">
+                <div class="main-img">
+                    <img src="../img/Artist002-main-img.png" alt="">
+                </div>
+
+                <div class="main-info">
+                    <div class="info-title">
+                        <h3>Biography</h3>
+                    </div>
+
+                    <div class="info-text">
+                        <p>인식의 다름에 의하여 보통의 풍경은 언제고 새로운 모습으로 탈바꿈한다. 엄유정(b. 1985)의 그리기는 유연한 시간 속에서 진행된다. 
+                            관점에 따라 매번 달리 목격되는 대상의 생김새를 오래 관찰하고 회화로 옮겨낸다. 형태의 가능성을 다각도에서 발견하고자 하는 노력이다. 〈빙하〉(2017-23)는 아이슬란드에서 본 빙하의 모습을 소재 삼아 그린 회화 연작이다. 바다와 땅의 경계에서 서서히 사라지는 대상의 유동성을 그림에 담고자 했다. 빙하의 면면은 녹을 듯 녹지 않는 부피로, 투명한 듯 불투명한 색채로, 닮은 듯 다른 저마다의 형태로 기다란 바라봄의 시간을 붙잡아 둔다.</p>
+                    </div>
+
+                    <div class="info-download">
+                        <span>DOWNLOAD ARTIST'S CV</span>
+                        <img src="../img/Artist002-Download-img.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!------- Artist002 Exhibitions-section ------->
+            <section class="Exhibitions-section">
+                <div class="Exhibitions-title">
+                    <h2>Exhibitions</h2>
+                    <span></span>
+                </div>
+
+                <div class="img-section">
+                    <div class="img-over-info">
+                        <div class="over-info-title">
+                            <h3>TITLE: Exhibition name</h3>
+                        </div>
+
+                        <div class="over-info-text">
+                            <span>Group Exhibition</span>
+                        </div>
+
+                        <div class="over-info-date">
+                            <span>10 Jan - 17 Feb 2024</span>
+                        </div>
+                    </div>
+
+                    <img src="../img/Artist-Exhibition-img.png" alt="">
+                </div>
+
+                <div class="read-more">
+                    <img src="../img/Artist002-Readmore.png" alt="">
+                </div>
+            </section>
+
+
+
+
+
+        </section>
+        
+            
+
+            
+            
+
+
+        
+        <!-- Footer -->
+        <section class="footer">
+            <span></span>
+            <div class="footer-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/mindful.art.forum/">
+                            <img src="../img/Insta_logo.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../img/Youtube_logo.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer-text">
+                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu, Seoul, Republic of Korea</p>
+            </div>
+        </section>
+        
+
+
+
+    </section>
+
+
+    <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
+    <div id="to-top">
+        <div class="material-icons"></div>
+    </div>
+
+            
+            
+    </div>
+
+</body>
+</html>

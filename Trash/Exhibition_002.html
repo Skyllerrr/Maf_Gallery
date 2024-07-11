@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition_002</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Apple (KR)" />
+    <meta property="og:title" content="iPad 10.2" />
+    <meta property="og:description" content="강력한 A13 Bionic 칩을 탑재한 iPad. 센터 스테이지 기술이 적용된 12MP 울트라 와이드 전면 카메라, True Tone 디스플레이 기술 및 64GB 저장 용량까지 갖췄습니다." />
+    <meta property="og:image" content="./images/ipad-seo.png" />
+    <meta property="og:url" content="https://apple.com/kr/ipad-10.2" />
+
+    <!--Twitter Card-->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Apple (KR)" />
+    <meta property="twitter:title" content="iPad 10.2" />
+    <meta property="twitter:description" content="강력한 A13 Bionic 칩을 탑재한 iPad. 센터 스테이지 기술이 적용된 12MP 울트라 와이드 전면 카메라, True Tone 디스플레이 기술 및 64GB 저장 용량까지 갖췄습니다." />
+    <meta property="twitter:image" content="./images/ipad-seo.png" />
+    <meta property="twitter:url" content="https://apple.com/kr/ipad-10.2" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="https://use.typekit.net/xrj2ymw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- GSAP & ScrollToPlugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+        integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.js" integrity="sha512-Fkp90xIgmyVqEw+i6jPbM0Hbf/Cwoo9MtVT99dLU6puijBCAX7DrZ9rmyuMcMUZOYLrPfLLnoqPgKjPZHM7Mzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Meterial Icons (화살표 아이콘을 넣기 위해 사용) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+    <!-- ScrollMagic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+    <link rel="stylesheet" href="./Exhibition_002_style.css">
+    <script defer type="module" src="./move.js"></script>
+    <script defer type="module" src="./scroll.js"></script>
+    <script defer type="module" src="./menuing.js"></script>
+    <script defer type="module" src="./Ex002-swiper.js"></script>
+    <script defer type="module" src="./Click.js"></script>
+    
+    <!-- ClickHandler.js를 불러올 때, 
+    defer type을 넣게 되면, 적용이 안됨
+    이유는 아직 못 찾음 -->
+    <script src="./ClickHandler.js"></script>
+
+    <script src="./modal.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="inner">
+            <ul class="menu">
+                <li class="menu-starter">
+                    <a>
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>            
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <section class="head-wrapper">
+            <header class="header-section">
+                <div class="main-header">
+
+                    <div class="header-style">
+                        <div class="logo-wrapper">
+                            <a href="/Home.html">
+                                <img class="white-logo" src="./img/MafLogo_Green1.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <img class="header-hamburger" src="./img/hamburger-menu-black.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="clone-menu">
+                        <div class="clone-in-menu">
+                            <img class="Toggle_EN" src="./img/Toggle_EN.png" alt="" onclick={}>
+                            <img class="Toggle_Close" src="./img/Close_btn.png" alt="">
+                        </div>
+                        <ul class="clone-ul">
+                            <li class="one"><a href="./Exhibition_001.html">Exhibitions</a></li>
+                            <li class="two"><a href="./Artist_001.html">Artists</a></li>
+                            <li class="three"><a href="./News.html">News</a></li>
+                            <li class="four"><a href="./Publication.html">Publication</a></li>
+                            <li class="five"><a href="./AboutUs.html">About Us</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                
+                <div class="Arrow-Back">
+                    <a href="./Exhibition_001.html">
+                        <img src="./img/Arrow-back.png" alt="">
+                    </a>
+                </div>
+
+                </header>
+        </section>
+
+
+
+        <!----- Exhibition002 Artist's Poster MainTitle ----->
+        <section>
+            <div class="poster-title">
+                <img src="./img/Ex002-Poster-Text.png" alt="">
+            </div>
+
+            <section class="poster-section">
+
+                <div class="poster-img">
+                    <img src="./img/Ex002-MainPoster.png" alt="">
+                </div>
+                <div class="poster-text">
+                    <p>through june 29, 2024</p>
+                </div>
+
+                <section class="poster-info">
+                    <a href="./Artist_002.html">
+                        <div class="artist-name">
+                            <h3>Artist name</h3>
+                            <span></span>
+                        </div>
+                    </a>
+                    <div class="artist-text">
+                    <p>인식의 다름에 의하여 보통의 풍경은 언제고 새로운 모습으로 탈바꿈한다. 엄유정(b. 1985)의 그리기는 유연한 시간 속에서 진행된다.</p> 
+                    <p>관점에 따라 매번 달리 목격되는 대상의 생김새를 오래 관찰하고 회화로 옮겨낸다. 형태의 가능성을 다각도에서 발견하고자 하는 노력이다.</p> 
+                    </div>
+                    <div class="poster-into">
+                        <p class="first-into">
+                            VIEWING ROOM
+                            <a href="./Exhibition_001.html">
+                                <img src="./img/ViewingRoom-into.png" alt="">
+                            </a>
+                        </p>
+                        <p class="second-into">
+                            DOWNLOAD PRESS RELEASE
+                            <a href="./Exhibition_001.html">
+                                <img src="./img/Download-into.png" alt="">
+                            </a>
+                        </p>
+                    </div>
+                </section>
+                
+            </section>
+        </section>
+
+
+        <section class="Installation-view">
+
+            <div class="view-wrapper">
+                <div class="view-title">
+                    <h2>Installation View</h2>
+                    <span></span>
+                </div>
+            </div>
+
+            <!----- Exhibition002 - swiper ----->
+            
+            
+
+        </section>
+
+
+        
+        <!----- Exhibition002 - swiper ----->
+        <!----- 이미지 클릭 시, Modal ----->
+        <div class="promotion">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" onclick=ClickHandler()>
+                        <img src="./img/Installation-view-img1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/Installation-view-img2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/Installation-view-img3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        
+
+
+
+        <!----- Exhibition002 Artist's info ----->
+
+
+
+
+        <!----- Works ----->
+        <section class="works-section">
+
+            <div class="works-wrapper">
+                <div class="works-title">
+                    <span></span>
+                    <h2>Works</h2>
+                </div>
+            </div>
+
+            <section class="first-works">
+                <div class="first-img">
+                    <img class="img-hover" src="./img/Works-first-img.png" alt="">
+                </div>
+
+                <div class="first-text">
+                    <p class="text-one">Display of Art Titles ‘ABCDEF’</p>
+                    <span class="text-two">2024</span>
+                    <p class="text-three">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</p>
+                    <span class="text-four">61 x 46cm</span>
+                </div>
+            </section>
+                
+            <!----- Works - Middle border ----->
+            <span class="middle-first-border"></span>
+
+            <section class="second-works">
+                <div class="second-img">
+                    <img class="img-hover" src="./img/Works-second-img.png" alt="">
+                </div>
+
+                <div class="second-text">
+                    <p class="text-one">Display of Art Titles ‘ABCDEF’</p>
+                    <span class="text-two">2024</span>
+                    <p class="text-three">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</p>
+                    <span class="text-four">61 x 46cm</span>
+                </div>
+            </section>
+
+            <!----- Works - Middle border ----->
+            <span class="middle-first-border"></span>
+
+            <section class="third-works">
+                <div class="third-img">
+                    <img class="img-hover" src="./img/Works-third-img.png" alt="">
+                </div>
+
+                <div class="third-text">
+                    <p class="text-one">Display of Art Titles ‘ABCDEF’</p>
+                    <span class="text-two">2024</span>
+                    <p class="text-three">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</p>
+                    <span class="text-four">61 x 46cm</span>
+                </div>
+            </section>
+
+
+            <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
+            <div class="view-more">
+                <a href="javascript:void(0)">
+                    <img src="./img/view-more-img.png" alt="">
+                </a>
+            </div>
+
+
+            <!----- Footer ----->
+            <section class="footer">
+                <span></span>
+                <div class="footer-icons">
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/mindful.art.forum/">
+                                <img src="./img/Insta_logo.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/Facebook_logo.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/Youtube_logo.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/Twit_logo.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-text">
+                    <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu,</p>
+                    <p>Seoul, Republic of Korea</p>
+                </div>
+            </section>
+
+            <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
+            <div id="to-top">
+                <div class="material-icons"></div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>

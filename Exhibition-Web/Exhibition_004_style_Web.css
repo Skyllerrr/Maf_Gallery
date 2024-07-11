@@ -1,0 +1,325 @@
+/* Reset */
+html {
+    --color-white: #FFF;
+    --color-black: #000000;
+    --color-font: #1D1D1D;
+    --color-font-darkgray: #6E6E6E;
+    --color-font-middlegray: #b7b7b7;
+    --color-font-lightgray: #F5F5F5;
+    --color-link: #0071E3;
+    --color-link-focus: #81B9F1;
+    --color-border: #D2D2D2;
+    --color-header: #3A3A3A;
+    --color-section: #F5F5F5;
+    --color-shadow: rgba(0, 0, 0, .4);
+}
+
+h1,
+h2,
+p,
+strong,
+body,
+ul,
+li,
+div {
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+p,
+strong {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+header ul.menu > li.menu-starter {
+    display: none;
+}
+
+
+/*** 하이퍼 링크 속성 제거 ***/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Typography */
+body {
+    font-family: 'SUIT';
+}
+    
+/* 이 부분을 지워서 위의 코드 내용처럼 모든 폰트에 SUIT가 적용됨
+@font-face {
+    font-family: 'SUIT';
+
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2');
+}
+*/ 
+
+
+
+@media (max-width: 1920px) {
+    /* 모바일 720까지의 레이아웃 */ 
+    .wrapper {
+      width: 1920px;
+
+  
+      /* 하단의 top으로 올라오는 to-top버튼을
+      보여드리기 위해서 임의로 height: 500vh 정도로
+      지정함 - 원래는 height: 1047px */
+    }
+
+
+
+    /******* Exhibition-View Section *******/
+    .close-section {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+
+        margin-top: 60px;
+        margin-left: 1612px;
+    }
+
+    .Exhibition-section {
+        display: flex;
+        width: 1400px;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+
+        margin: 40px 260px 0;
+    }
+
+    .Exhibition-view {
+        display: flex;
+        height: 800px;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        align-self: stretch;
+    }
+
+    .Exhibition-view .view-img {
+        display: flex;
+        width: 924px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    .Exhibition-view .Exhibition-info {
+        display: flex;
+        width: 448px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+    }
+
+    .Exhibition-info .Exhibition-main-text {
+        display: flex;
+        padding-bottom: 16px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+    }
+
+    .Exhibition-info .Exhibition-main-text
+    .text-title {
+        color: #000;
+        font-family: SUIT;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 48px */
+        letter-spacing: -0.704px;
+    }
+
+    .Exhibition-info .Exhibition-main-text
+    .text-year {
+        color: #000;
+        font-family: SUIT;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 39px */
+        letter-spacing: -0.572px;
+    }
+
+    .Exhibition-info .Exhibition-sub-text {
+        color: #000;
+        text-align: right;
+        font-family: SUIT;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 27px */
+        letter-spacing: -0.396px;
+    }
+
+    .Exhibition-info .Exhibition-length {
+        color: #000;
+        font-family: SUIT;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 27px */
+        letter-spacing: -0.396px;
+    }
+
+    .Exhibition-view-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .Exhibition-view-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .Exhibition-view-number .slide-text .first-text {
+        color: #000;
+        text-align: right;
+        font-family: SUIT;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 150%; /* 48px */
+        letter-spacing: -0.704px;
+    }
+
+    .Exhibition-view-number .slide-text .second-text {
+        color: #000;
+        text-align: right;
+        font-family: SUIT;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: -0.352px;
+    }
+
+
+
+
+
+
+
+
+
+    /************** footer **************/
+    /* Home화면의 footer */
+  .footer {
+    margin-top: 163px;
+  
+    display: flex;
+    width: 1920px;
+    height: 453px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-shrink: 0;
+    
+    border-top: 1px solid lightgray; 
+  }
+  
+  
+  .footer-icons {
+    
+  }
+  
+  .footer-icons ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 150px;
+  
+  }
+  
+  .footer .footer-text  {
+    width: 563px;
+    height: 27px;
+  
+    margin-left: 20px;
+  }
+  
+  .footer .footer-text p {
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  
+    
+  }
+  
+  .footer-icons .footer-text p {
+    
+  }
+
+}
+
+
+
+
+
+/***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+#to-top {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    
+  
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+    gap: 6px;
+  
+    
+    position: fixed;
+    bottom: 40px;
+    right: 80px;
+  
+    
+    background-image: url('../img/Arrowup_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  }
+  
+  .material-icons {
+    
+    font-size: 30px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 3px;
+    right: 4px;
+    margin: auto;
+    /* opacity: 1; -> 화살표가 잘 보임 */
+    opacity: 1;
+    transition: 0.4s; 
+  }

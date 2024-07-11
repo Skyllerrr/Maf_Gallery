@@ -1,0 +1,356 @@
+/* Reset */
+html {
+    --color-white: #FFF;
+    --color-black: #000000;
+    --color-font: #1D1D1D;
+    --color-font-darkgray: #6E6E6E;
+    --color-font-middlegray: #b7b7b7;
+    --color-font-lightgray: #F5F5F5;
+    --color-link: #0071E3;
+    --color-link-focus: #81B9F1;
+    --color-border: #D2D2D2;
+    --color-header: #3A3A3A;
+    --color-section: #F5F5F5;
+    --color-shadow: rgba(0, 0, 0, .4);
+}
+
+h1,
+h2,
+p,
+strong,
+body,
+ul,
+li,
+div {
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+p,
+strong {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+header ul.menu > li.menu-starter {
+    display: none;
+}
+
+
+/*** 하이퍼 링크 속성 제거 ***/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/******* Typography *******/
+@font-face {
+    font-family: 'SUIT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2');
+}
+
+
+
+@media (max-width: 720px) {
+    /* 모바일 720까지의 레이아웃 */ 
+    .wrapper {
+      width: 360px;
+
+  
+      /* 하단의 top으로 올라오는 to-top버튼을
+      보여드리기 위해서 임의로 height: 500vh 정도로
+      지정함 - 원래는 height: 1047px */
+    }
+
+    .wrapper .close-btn {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+
+        margin: 20px 15px 0 315px;
+    }
+
+
+    /************ Ex004 img-section ************/
+    .wrapper .img-wrapper {
+        display: flex;
+        
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: 20px;
+    }
+
+    .wrapper .img-wrapper .img-section {
+        display: flex;
+        width: 360px; 
+        height: 296px;
+        padding: 0px 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+
+        margin: 20px 20px;
+        
+    }
+
+
+    .wrapper .img-wrapper .number-slide {
+        width: 166px;
+       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .wrapper .img-wrapper .number-slide .slide-text {
+        width: 38px;
+        
+        display: flex;
+        align-items: flex-end;
+        gap: 2px;
+    }
+    
+    /* number-slide 부분인데, 위치를 못 잡음 */
+    .wrapper .img-wrapper .number-slide .slide-text .first-text {
+        color: #000;
+        text-align: right;
+        font-family: SUIT;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 150%; /* 27px */
+        letter-spacing: -0.396px;
+
+        width: 24px;
+
+        margin-left: -4px;
+    }
+                     
+    .wrapper .img-wrapper .number-slide .slide-text .second-text {
+        color: #000;
+        text-align: right;
+        font-family: SUIT;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 18px */
+        letter-spacing: -0.264px;
+
+        width: 12px;
+    }
+
+
+    /*********** Ex004 text-section ***********/
+    .text-section {
+        display: flex;
+        width: 330px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        margin: 40px 15px 0;
+        
+    }
+
+    .text-section .text-title { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        width: 330px;
+    }
+
+    .text-section .text-title .text-first-title
+    .text-section .text-title .text-second-title {
+        width: 243px;
+        
+    }
+
+    .text-section .text-title .text-first-title {
+        color: #000;
+        font-family: SUIT;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 26.4px */
+        letter-spacing: -0.484px;
+        
+         
+    }
+
+    .text-section .text-title h3 {
+        
+        
+    }
+
+    .text-section .text-title span {
+        color: #000;
+        font-family: SUIT;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 27px */
+        letter-spacing: -0.396px;
+
+        display: block;
+        margin-bottom: 26px;
+    }
+    
+
+    .text-section .text-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        width: 330px;
+    }
+
+
+    .text-section .text-info .text-third-title {
+        width: 243px;
+        
+        
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 21px */
+        letter-spacing: -0.308px;
+
+        gap: 26px;
+    }
+
+    .text-section .text-info .text-third-title p {
+        
+    }
+
+
+    .text-section .text-info .text-four-title {
+        color: #000;
+        font-family: SUIT;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 21px */
+        letter-spacing: -0.308px;
+    }
+
+    /************** Ex004와 Ex005의 높이를 맞추기 위해
+    wrapper에 margin-top을 음수값으로 적요 **************/
+    .wrapper {
+        margin-top: -10px;
+    }
+
+    /************** footer **************/
+    .footer {
+        margin-top: 79px;
+  
+        display: flex;
+        width: 360px;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+        flex-shrink: 0;
+        
+        border-top: 1px solid lightgray; 
+    }
+
+
+    .footer-icons {
+    
+    }
+
+    .footer-icons ul {
+        display: flex;
+        
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+
+        gap: 46.67px;
+
+        margin-top: 93.5px;
+    }
+
+    .footer .footer-text {
+        color: #000;
+        text-align: center;
+        font-family: SUIT;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 150%; /* 18px */
+        letter-spacing: -0.264px;
+    }
+
+}
+
+
+
+
+
+/***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+#to-top {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    
+  
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+    gap: 6px;
+  
+    
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  
+  
+    
+    background-image: url('../img/Arrowup_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  }
+  
+  .material-icons {
+    
+    font-size: 30px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 3px;
+    right: 4px;
+    margin: auto;
+    /* opacity: 1; -> 화살표가 잘 보임 */
+    opacity: 1;
+    transition: 0.4s; 
+  }

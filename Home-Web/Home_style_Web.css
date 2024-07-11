@@ -1,0 +1,556 @@
+/* Reset */
+html {
+    --color-white: #FFF;
+    --color-black: #000000;
+    --color-font: #1D1D1D;
+    --color-font-darkgray: #6E6E6E;
+    --color-font-middlegray: #b7b7b7;
+    --color-font-lightgray: #F5F5F5;
+    --color-link: #0071E3;
+    --color-link-focus: #81B9F1;
+    --color-border: #D2D2D2;
+    --color-header: #3A3A3A;
+    --color-section: #F5F5F5;
+    --color-shadow: rgba(0, 0, 0, .4);
+}
+
+h1,
+h2,
+p,
+strong,
+body,
+ul,
+li,
+div {
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+p,
+strong {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+header ul.menu > li.menu-starter {
+    display: none;
+}
+
+
+/*** 하이퍼 링크 속성 제거 ***/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/*
+이 부분을 예를 들어서 min-height: 1047vh;로
+하게 되면 top으로 올라가는 버튼을 확인할 수 있음
+
+.wrapper {
+  min-height: 1047vh;
+}
+*/
+
+
+/******* Typography *******/
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 100;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2');
+}
+
+
+/* AOS 애니메이션 사용을 위해 전체 body의 높이를
+일단, 임의로 171vh로 지정해줌 */
+  body {
+    
+  }
+
+/* top으로 올리는 버튼을 보기위해 vh로 설정 */
+  /*
+  .wrapper {
+    max-width: 980px;
+    min-height: 145vh;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  
+    /* ./img/Mobile_Header.png는 글씨 없는 배경
+       ./img/Mobile_Banner.png는 글씨 있는 배경 */
+    /*
+    background-image: url('./img/Mobile_Header.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  } 
+  */
+  
+
+  /*
+  @media (max-width: 1000px) {
+    .inner {
+      max-width: 692px;
+    }
+  }
+  */
+
+  /*
+  header {
+    --header-height: 44px;
+    position: fixed;
+    z-index: 9;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+  }
+  */   
+
+
+
+  /*
+  .sub-header {
+    border: 1px solid blue; 
+  }
+  */
+
+  /* header 고정 (다만, 스크롤 내릴 때 처음 살짝 올라가는게 보임) */
+  .header-section .main-header {
+    position: fixed;
+    
+  }
+
+  
+
+/* toggle 메뉴 버튼을 맨 꼭대기로 올리기 위해 position과 top사용 */
+  header ul.menu {
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-height);
+    
+  }
+  header ul.menu > li {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    transition: .4s;
+    
+  }
+  header ul.menu > li.menu-starter {
+    display: none;
+  }
+  header ul.menu > li > a {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 11px;
+    color: var(--color-font-lightgray);
+    opacity: .8;
+  }
+
+  html.fixed {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+  }
+  
+  header.searching ul.menu > li {
+    transform: scale(.7);
+    opacity: 0;
+  }
+  header.searching .search-wrap {
+    transition-delay: .2s;
+    opacity: 1;
+    visibility: visible;
+  }
+  header.searching .search input,
+  header.searching .search .search-icon,
+  header.searching .search .autocompletes h3,
+  header.searching .search .autocompletes li {
+    transition-delay: .2s;
+    transform: translate(0, 0);
+  } 
+  
+  
+  header .clone-menu {
+    display: none;
+  }
+
+
+
+  /* 전체 wrapper */
+  .wrapper {
+    max-width: 1920px;
+    
+    position: relative;
+  }
+
+  
+  /* clone-menu에서 각 메뉴를 클릭할 때 */
+  .clone-ul li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .clone-ul li a:visited {
+    color: black;
+  }
+
+  .clone-ul li a:active {
+    color: black;
+  }
+
+  .Header-img {
+    width: 100vw;
+  }
+
+
+/* 반응형 */
+/* Layout */
+@media (max-width: 1920px) {
+    /* 모바일 720까지의 레이아웃 */ 
+    .wrapper {
+      width: 1920px;
+      
+
+      /* 하단의 top으로 올라오는 to-top버튼을
+      보여드리기 위해서 임의로 height: 500vh 정도로
+      지정함 - 원래는 height: 1047px */
+      
+      
+    }
+
+    .wrapper .head-wrapper {
+      /* Figma에는 width의 값이 
+      모바일 기준 360px으로 잡고 가는건데,
+      브라우저에서는 최대로 줄일 때,
+      433px이 되서
+      이미지 가로를 최대로 채우기 위해
+      width값을 임의의 값인 96.2vw로 줬다.*/
+      width: 1920px;
+      
+      border-radius: 0px 0px 100px 0px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
+      background-size: cover;
+    }
+
+    .header-section {
+      width: 100%;
+      
+
+      position: relative;
+    }
+
+    .Header-img {
+      box-sizing: border-box;
+      width: 100%;
+      
+      
+      z-index: -9;
+    }
+
+
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+
+      position: absolute;
+      left: 90px;
+      bottom: 60px;
+    }
+
+    .header-info h2 {
+      color: #FFF;
+      font-family: SUIT;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 150%; /* 30px */
+      letter-spacing: -0.44px;
+    }
+
+    .header-info span {
+      color: #FFF;
+      font-family: SUIT;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.396px;
+    }
+
+
+
+
+
+    .header-menu .header-ul {
+      display: flex;
+      align-items: flex-start;
+      gap: 70px;
+  
+      color: #FFF;
+      text-align: center;
+      font-family: SUIT;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;   /* 27px */
+      letter-spacing: -0.396px;
+
+      
+    }
+   
+
+
+    .header-menu .header-ul a .EN {
+      margin-left: 40px;
+    }
+    
+ 
+
+    /* Header 전체 배경 */
+
+    .header-style {
+      display: flex;
+      width: 1920px;
+      padding: 20px 90px 25px 90px;
+      justify-content: space-between;
+      align-items: center; 
+    }
+
+
+
+    header .white-logo {
+      width: 87.429px;
+      height: 27px;
+      flex-shrink: 0;
+      /* Figma 개발자 모드 사용하기 전
+      width: 20vw;
+      margin: 30px 0 0 30px;
+      */
+    }
+
+    
+    .header-section .main-header .header-hamburger {
+      
+    }
+
+    /*
+    .sub-header .header-hamburger-black {
+      position: absolute;
+      left: 200px;
+      top: 20px;
+    }
+    */
+
+  }
+
+
+      
+        
+
+
+
+
+/* 모바일 -> 웹 화면 구현 시 */
+/*
+@media (min-width: 720px) and (max-width: 1920px) {
+  .wrapper {
+    
+
+
+  }
+
+  
+
+    /* 스크롤을 내릴 때, 
+    헤더가 바뀌는 부분을 구현
+    .sub-header {
+      
+      width: 20vw;
+      margin: 30px 0 0 30px;
+    }
+    */
+
+    
+    
+    /* Home화면의 footer */
+    .footer {
+      margin-top: 130px;
+
+      display: flex;
+      width: 1920px;
+      height: 453px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      flex-shrink: 0;
+      
+      border-top: 1px solid lightgray; 
+    }
+
+
+    .footer-icons {
+      
+    }
+
+    .footer-icons ul {
+      display: flex;
+      align-items: flex-start;
+      gap: 150px;
+
+      
+    }
+
+    .footer .footer-text  {
+      width: 563px;
+      height: 27px;
+
+      margin-left: 20px;
+    }
+
+    .footer .footer-text p {
+      color: #000;
+      font-family: SUIT;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.396px;
+
+      
+    }
+    
+    .footer-icons .footer-text p {
+      
+    }
+
+  
+
+    /*
+    .footer { 
+      z-index: -9;
+    }
+    */
+
+    /*
+    .footer .footer-icons ul li a {
+      z-index: 9;
+    }
+    */
+
+
+    
+    /* clone-menu의 글자 크기를 맞추기 위해 적용 */
+    /*
+    header .clone-menu ul li {
+      width: 15vw;
+    }
+    
+
+    header .clone-menu ul li:last-child {
+      border-bottom: none;
+    }
+
+    header .clone-menu ul li a {
+      display: block;
+      padding: 30px 0;
+      color: var(--color-black);
+      font-size: 0.875rem;
+      
+    }
+
+    header .clone-menu ul li:hover a {
+      transform: scale(1.2);
+      transition-duration: 0.5s;
+    }
+    */
+
+    /*
+    header.menuing.searching--mobile .clone-menu {
+      transform: translate(0, 1100px);
+      visibility: hidden;
+      opacity: 1;
+    }
+    */
+      
+  /* to-top 버튼 보이게 하기 위해서,
+  높이를 임의로 100vh로 지정 */
+  /*
+  .wrapper {
+    
+  }
+  */
+
+  /***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+  #to-top {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    
+
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    gap: 6px;
+
+    
+    position: fixed;
+    bottom: 80px;
+    right: 120px;
+
+    
+    background-image: url('../img/Arrowup_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .material-icons {
+    font-size: 30px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 3px;
+    right: 4px;
+    margin: auto;
+    /* opacity: 1; -> 화살표가 잘 보임 */
+    opacity: 1;
+    transition: 0.4s;
+  }
+
+
+
+/* 모바일 -> 웹 화면 구현 시 */
+/*
+@media (min-width: 720px) and (max-width: 1920px) {
+  .wrapper {
+    
+
+
+  }
+}
+*/
+
+

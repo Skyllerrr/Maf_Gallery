@@ -1,0 +1,1258 @@
+/* Reset */
+html {
+  --color-white: #FFF;
+  --color-black: #000000;
+  --color-font: #1D1D1D;
+  --color-font-darkgray: #6E6E6E;
+  --color-font-middlegray: #b7b7b7;
+  --color-font-lightgray: #F5F5F5;
+  --color-link: #0071E3;
+  --color-link-focus: #81B9F1;
+  --color-border: #D2D2D2;
+  --color-header: #3A3A3A;
+  --color-section: #F5F5F5;
+  --color-shadow: rgba(0, 0, 0, .4);
+}
+
+h1,
+h2,
+p,
+strong,
+body,
+ul,
+li,
+div {
+padding: 0;
+margin: 0;
+}
+
+h1,
+h2,
+p,
+strong {
+font-size: inherit;
+font-weight: inherit;
+}
+
+li {
+list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+header ul.menu > li.menu-starter {
+  display: none;
+}
+
+
+/*** 하이퍼 링크 속성 제거 ***/
+a {
+text-decoration: none;
+color: inherit;
+}
+
+
+/******* Typography *******/
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 100;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2');
+}
+
+
+/***************** Layout *****************/
+/* 이 부분의 때문에 Arrow-back이 안보이고 있었음 */
+.header-section .main-header {
+  position: fixed;
+
+  /* 모든 컨텐츠가 헤더위로 올라가지 않도록 최상위로 줌 */
+  z-index: 9999;
+}
+
+
+
+header .inner {
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 1020px;
+}
+
+header .mobile-layout {
+  display: none;
+}
+
+/* toggle 메뉴 버튼을 맨 꼭대기로 올리기 위해 position과 top사용 */
+header ul.menu {  
+  display: flex;
+  justify-content: space-between;
+  height: var(--header-height);
+  
+}
+
+header ul.menu > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: .4s;
+  
+}
+
+header ul.menu > li.menu-starter {
+  display: none;
+}
+
+header ul.menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  color: var(--color-font-lightgray);
+  opacity: .8;
+}
+
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+
+header.searching ul.menu > li {
+  transform: scale(.7);
+  opacity: 0;
+}
+header.searching .search-wrap {
+  transition-delay: .2s;
+  opacity: 1;
+  visibility: visible;
+}
+header.searching .search input,
+header.searching .search .search-icon,
+header.searching .search .autocompletes h3,
+header.searching .search .autocompletes li {
+  transition-delay: .2s;
+  transform: translate(0, 0);
+}
+
+
+header .clone-menu {
+  display: none;
+}
+
+
+.main-header {
+  
+
+  
+} 
+
+
+
+/* clone-menu에서 각 메뉴를 클릭할 때 */
+.clone-ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.clone-ul li a:visited {
+  color: black;
+}
+
+.clone-ul li a:active {
+  color: black;
+}
+
+.Header-img {
+  width: 100vw;
+  
+}
+
+
+/***************** Mobile Layout *****************/
+  @media (max-width: 720px) {
+  /* 모바일 720까지의 레이아웃 */ 
+  .wrapper {
+    width: 360px;
+    
+
+    /* 하단의 top으로 올라오는 to-top버튼을
+    보여드리기 위해서 임의로 height: 500vh 정도로
+    지정함 - 원래는 height: 1047px */
+    
+    
+  }
+
+  .wrapper .head-wrapper {
+    /* Figma에는 width의 값이 
+    모바일 기준 360px으로 잡고 가는건데,
+    브라우저에서는 최대로 줄일 때,
+    433px이 되서
+    이미지 가로를 최대로 채우기 위해
+    width값을 임의의 값인 96.2vw로 줬다.*/
+    width: 360px;
+    
+    border-radius: 0px 0px 100px 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
+    background-size: cover;
+  }
+
+  .header-section {
+    width: 100%;
+    
+    position: relative;
+  }
+
+  .Header-img {
+    box-sizing: border-box;    
+    
+   
+  }
+  
+  
+
+
+  /* Header 전체 배경 */
+
+  .header-style {
+    width: 360px;
+    
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 15px;
+
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-wrapper {
+    
+  }
+  
+  .header-style .hamburger-img {
+    
+    flex-shrink: 0;
+    
+  }
+
+
+  
+  
+
+    
+    /* 스크롤을 내릴 때, 
+    헤더가 바뀌는 부분을 구현
+    .sub-header {
+      
+      width: 20vw;
+      margin: 30px 0 0 30px;
+    }
+    */
+
+    header::before {
+      content: "";
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: var(--color-header);
+      transition: .4s;
+  }
+  
+  
+  /*
+  header ul.menu {
+    position: absolute;
+    top: 0px;
+  }
+  */
+
+  header ul.menu > li {
+    display: none;
+  }
+  
+  header ul.menu > li.menu-starter,
+  header ul.menu > li.apple-logo,
+  header ul.menu > li.basket-starter {
+    display: flex;
+  }
+
+  header ul.menu > li.menu-starter div {
+    margin-top: 50px;
+  }
+
+  header ul.menu > li.menu-starter span {
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: var(--color-white);
+    margin-bottom: 6px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+  
+    /* margin-left
+    모바일 화면에서 햄버거 메뉴를 나타내는
+    부분인데 화면에 보이는 것은
+    집에서는 450px, 
+    회사에서는 400px로 다름 */
+    
+    margin-left: 380px;
+  }
+
+  
+  header ul.menu > li.menu-starter span:last-child {
+    margin-bottom: 0;
+  }
+  
+  header.menuing {
+    background-color: var(--color-white);
+  }
+
+  header.menuing::before {
+    height: 100vh;
+    top: 0px;
+    background-color: var(--color-white);
+  }
+
+
+  /******* clone-menu의 내용을 나타냄 *******/
+  header.menuing .clone-menu {
+      transform: translate(0, 0);
+      visibility: visible;
+      opacity: 1;
+      background-color: var(--color-white);
+      height: 100vh;
+  }
+
+
+
+
+  header.menuing ul.menu > li.menu-starter span:first-child {
+    transform: translate(0, 3.5px) rotate(45deg);
+    background-color: var(--color-black);
+  }
+
+  header.menuing ul.menu > li.menu-starter span:nth-child(2) {
+    transform: translate(0, -3.5px) rotate(-45deg);
+    background-color: var(--color-black);
+  }
+
+  header.menuing ul.menu > li.menu-starter span:last-child {
+    display: none;
+  }
+
+  header.menuing ul.menu > li.menu-starter span {
+    
+  }
+  
+
+  /* 수정 사항 - 720px 시, 
+  toggle 메뉴를 클릭한 clone 메뉴가 보일때의 코딩인데 
+  여기서 text를 왼쪽으로 200px, padding: 0 20px; 없앴음 */
+  header .clone-menu {
+    margin: 0 auto;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    text-align: center;
+
+    width: 100%;
+    box-sizing: border-box;
+    transition: .4s;
+    transform: translate(0, -50px);
+
+    z-index: 9999;
+  }
+
+  header .clone-in-menu {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 21.5px 25px;
+    
+    align-items: center;
+  }
+
+  header .clone-in-menu .Toggle_EN {
+    
+  }
+
+  header .clone-in-menu .Toggle_Close {
+    margin-left: 264px;
+  }
+  
+
+  header .clone-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    margin-top: 50px;
+  }
+
+
+
+  /************** main-wrapper **************/
+  .main-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+  }
+
+
+  /************** artist-wrapper **************/
+  .main-wrapper .artist-wrapper {
+    width: 360px;
+    
+    margin-top: 40px;
+  }
+
+  .main-wrapper .artist-wrapper .artist-info {
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 70px 0;
+  }
+
+
+  .main-wrapper .artist-wrapper .artist-info .artist-name {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: -0.792px;
+
+    width: 205px;
+  }
+
+  .main-wrapper .artist-wrapper .artist-info .artist-text {
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+    gap: 28px;
+
+    width: 194px;
+
+    justify-content: space-between;
+  }
+
+  .main-wrapper .artist-wrapper .artist-info .artist-text .text-one {
+    color: rgba(0, 0, 0, 0.40);
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  }
+
+  .main-wrapper .artist-wrapper .artist-info .artist-text .text-two {
+    color: rgba(0, 0, 0, 0.40);
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  }
+
+
+  /************** Artists - Biography **************/
+  .artist-biography {
+    display: flex;
+    width: 360px;
+    padding: 0px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+    margin-top: 90px;
+  }
+
+  .artist-biography .bio-wrapper {
+    display: flex;
+    height: 173px;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+
+
+  }
+
+  .artist-biography .bio-wrapper .bio-title {
+    display: flex;
+    height: 180px;
+    align-items: flex-start;
+    gap: 10px;
+
+    width: 147px;
+  }
+
+  .artist-biography .bio-wrapper .bio-title h3 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%; /* 48px */
+    letter-spacing: -0.704px;
+  }
+
+  .artist-biography .bio-wrapper .bio-text {
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 160%; /* 28.8px */
+    letter-spacing: -0.396px;
+
+    width: 163px;
+    align-self: stretch;
+  }
+
+
+  .artist-biography .bio-text-wrapper {
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; /* 28.8px */
+    letter-spacing: -0.396px;
+
+    width: 330px;
+    
+    align-self: stretch;
+  }
+
+  .artist-biography .bio-download {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 184px;
+
+    margin-top: 60px;
+  }
+
+  .artist-biography .bio-download span {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%; /* 13px */
+    letter-spacing: -0.286px;
+    text-transform: uppercase;
+  }
+
+  .artist-biography .bio-download a {
+    margin-right: 12px;
+  }
+
+
+  /************** Artists - Exhibition **************/
+  .artist-exhibition {
+    display: flex;
+    width: 330px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    width: 330px;
+
+    margin: 90px 15px 90px;
+  }
+
+  .artist-exhibition .ex-title {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+
+    width: 330px;
+
+    padding-bottom: 30px;
+  }
+
+  .artist-exhibition .ex-title .ex-main-title {
+    color: #000;
+    font-family: SUIT;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 100%; /* 52px */
+    letter-spacing: -1.144px;
+
+    
+  }
+
+  .artist-exhibition .ex-title .ex-main-title .ex-main-border {
+    height: 1px;
+    flex: 1 0 0;
+    border: 1px solid lightgray;
+
+    width: 101px;
+
+    margin-left: 229px;
+    margin-top: -25.5px;
+  }
+
+  .artist-exhibition .ex-img {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 330px;
+
+    margin-top: 50px;
+  }
+
+  .artist-exhibition .ex-readmore-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+
+    width: 330px;
+
+  }
+
+  .artist-exhibition .ex-readmore-wrapper .ex-readmore {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+
+  /************** Artists - Works **************/
+  .artist-works {
+    display: flex;
+    width: 330px;
+    padding-bottom: 50px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    margin: 15px 15px;
+    
+  }
+
+  .artist-works .works-title {
+    display: flex;
+    width: 330px;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+
+  }
+
+  .artist-works .works-title .works-main-title .ex-main-border {
+    height: 1px;
+    flex: 1 0 0;
+    border: 1px solid lightgray;
+
+    width: 169px;
+
+    margin-left: -191px;
+    
+    position: relative;
+    top: 38.5px;
+  }
+
+
+  .artist-works .works-title .works-main-title {
+    color: #000;
+    font-family: SUIT;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%; /* 78px */
+    letter-spacing: -1.144px;
+
+    margin-left: 191px;
+  }
+
+
+  /************** Artists - Works img **************/
+  .artist-works .works-img-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    width: 330px;
+  }
+
+
+  /************** Artists - first-section-first **************/
+  .artist-works .works-img-wrapper .first-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-info .first-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-info .first-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-info .first-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .first-info .first-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+
+  /************** Artists - first-section-second **************/
+  .artist-works .works-img-wrapper .first-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-info .second-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-info .second-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-info .second-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .second-info .second-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+  
+  /************** Artists - first-section-third **************/
+  .artist-works .works-img-wrapper .first-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-info .third-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-info .third-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-info .third-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .first-works-section .third-info .third-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+
+  /************** Artists - second-section-first **************/
+  .artist-works .works-img-wrapper .second-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px; 
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-info .first-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-info .first-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-info .first-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .first-info .first-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+
+
+  /************** Artists - second-section-second **************/
+  .artist-works .works-img-wrapper .second-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px; 
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-info .second-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-info .second-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-info .second-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .second-info .second-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+
+  /************** Artists - second-section-third **************/
+.artist-works .works-img-wrapper .second-works-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px; 
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-section {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-info {
+    display: flex;
+    padding: 0px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 156px;
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-info .third-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    width: 144px;
+
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-info .third-title h4 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 19.5px */
+    letter-spacing: -0.286px;  
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-info .third-text {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .artist-works .works-img-wrapper .second-works-section .third-info .third-text span { 
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+    
+    width: 144px;
+  }
+
+
+  .view-more {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+
+    width: 330px;
+    
+    padding: 30px 10px 10px 10px;
+    
+  }
+
+/************** footer **************/
+.footer {
+  margin: 90px 15px 0 0;
+
+  display: flex;
+  width: 360px;
+  height: 453px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  flex-shrink: 0;
+  
+  border-top: 1px solid lightgray; 
+}
+
+
+.footer-icons {
+  
+}
+
+.footer-icons ul {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+
+  gap: 46.67px;
+}
+
+.footer .footer-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 150%; /* 18px */
+  letter-spacing: -0.264px;
+}
+
+
+
+  /* 화살표 뒤로가는 부분 
+    (Home으로 되돌아가는 부분) */
+    .Arrow-Back img {
+      margin-top: 96px;
+      margin-left: 15px;
+  }
+}
+
+
+
+/***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+#to-top {
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  
+
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  gap: 6px;
+
+  
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+
+
+  
+  background-image: url('../img/Arrowup_btn.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 99px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+}
+
+.material-icons {
+  
+  font-size: 30px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 3px;
+  right: 4px;
+  margin: auto;
+  /* opacity: 1; -> 화살표가 잘 보임 */
+  opacity: 1;
+  transition: 0.4s; 
+}
