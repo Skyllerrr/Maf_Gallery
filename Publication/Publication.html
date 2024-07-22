@@ -57,6 +57,8 @@
 
     
     <link rel="stylesheet" href="./Publication_style.css">
+    <script defer type="module" src="../JS/Click_to_contact.js"></script>
+    <script defer type="module" src="../JS/dropdown.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -104,8 +106,13 @@
 
                     <div class="clone-menu">
                         <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            <div class="Toggle_lang">
+                                <a href="./Publication_Kor.html">KR</a>
+                            </div>
+                            
+                            <div class="Toggle_close">
+                                <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            </div>
                         </div>
                         <ul class="clone-ul">
                             <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
@@ -119,7 +126,10 @@
                 </div>
                 
                 
-                <div class="Arrow-Back">
+                <div class="Arrow-Back" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="150"
+                data-aos-duration="1000">
                     <a href="../Exhibition/Exhibition_001.html">
                         <img src="../img/Arrow-back.png" alt="">
                     </a>
@@ -129,13 +139,42 @@
         </section>
 
         
-        <section class="main-header">
+        <section class="main-header" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="main-title">
                 Publication
-            </div> 
+            </div>
         </section>
         
-        <section class="publication-wrapper"> 
+        <section class="publication-wrapper" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000"> 
+
+            <!----- Dropdown ----->
+            <div class="View-All-Dropdown" data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="150"
+            data-aos-duration="1000">
+                <button class="dropdown-button">
+                    View All
+                    
+                </button>
+
+                <div class="dropdown-img">
+                    <img class="dropdown-icon" src="../img/Dropdown_icon.png" alt="">
+                </div>
+                
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">View All</a>
+                    <a href="javascript:void(0)">Publication</a>
+                    <a href="javascript:void(0)">2024 Column</a>
+                    <a href="javascript:void(0)">2022 Column</a>
+                    <a href="javascript:void(0)">Article</a>
+                </div>
+            </div>
 
           <div class="pub-first-section">
              <div class="first-img">
@@ -177,7 +216,7 @@
 
           <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
           <div class="view-more">
-            <a href="javascript:void(0)">
+            <a href="./Publication_more.html">
                 <img src="../img/view-more-img.png" alt="">
             </a>
           </div>
@@ -197,6 +236,11 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
+
+                    <li>           
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
+                    </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
@@ -220,5 +264,8 @@
         
     </div>
 
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

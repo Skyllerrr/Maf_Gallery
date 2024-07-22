@@ -55,9 +55,11 @@
 
     
     <link rel="stylesheet" href="./Exhibition_002_style.css">
+    <script defer type="module" src="../JS/Click_to_contact.js"></script>
     <script defer type="module" src="../JS/ModalClick.js"></script>
+    <script defer type="module" src="../JS/Part-ModalClick.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
-    <script defer type="module" src="../JS/scroll.js"></script>
+    <script defer type="module" src="../JS/scroll-Web.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
     <script defer type="module" src="../JS/Ex002-swiper.js"></script>
     <script defer type="module" src="../JS/Click.js"></script>
@@ -71,7 +73,97 @@
 </head>
 <body>
     <div class="wrapper">
+        <header class="banner">
 
+            <!------- Home-header ------->
+            <div class="banner-header">
+                <a href="../Home/Home.html">
+                    <img src="../img/Header-MAF_Logo_color.svg" alt="">
+                </a>
+                
+                <div class="hamburger">
+                    <img class="header-hamburger" src="../img/Home_Toggle_menu_color.svg" alt="">
+                </div>
+            </div>
+    
+            <!------- Home-header-Web ------->
+            <div class="header-style">
+                <div class="logo-wrapper">
+                    <a href="../Home/Home.html">
+                        <img class="white-logo" src="../img/Header-MAF_Logo_color.svg" alt="">
+                    </a>
+                </div>
+    
+                <div class="header-menu">
+                    <ul class="header-ul">
+                        <a href="../Exhibition-Web/Exhibition_001_Web.html">
+                            <li class="Ex-header">Exhibitions</li>
+                        </a>
+    
+                        <a href="../Artist-Web/Artist_001_Web.html">
+                            <li class="At-header">Artists</li>
+                        </a>
+    
+                        <a href="../News-Web/News_Web.html">
+                            <li class="Ne-header">News</li>
+                        </a>
+    
+                        <a href="../Publication-Web/Publication_Web.html">
+                            <li class="Pu-header">Publication</li>
+                        </a>
+    
+                        <a href="../AboutUs-Web/AboutUs_Web.html">
+                            <li class="AU-header">About Us</li>
+                        </a>
+    
+                        <a href="./Home_Web_Kor.html">
+                            <li class="EN">KR</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+    
+    
+            
+            <!------- Home-banner-text ------->
+            <section class="banner-text">
+                <div class="banner-header-text">
+                    <h2>Artist name</h2>
+                </div>
+    
+                <div class="banner-sub-text">
+                    <span>artwork title</span>
+                </div>
+    
+                <div class="banner-info-text">
+                    <span>through june 29, 2024</span>
+                </div>
+            </section>
+    
+            <!------- Common-ToggleMenu ------->
+            <div class="clone-menu">
+                <div class="clone-in-menu">
+                    <div class="Toggle_lang">
+                        <a href="javscript:void(0)">KR</a>
+                    </div>
+                    
+                    <div class="Toggle_close">
+                        <img class="Toggle_Close" src="../img/CloneMenu-Close.svg" alt="">
+                    </div>
+                </div>
+                
+                <ul class="clone-ul">
+                    <li class="one"><a href="../Exhibition-Web/Exhibition_001_Web.html">Exhibitions</a></li>
+                    <li class="two"><a href="">Artists</a></li> 
+                    <li class="three"><a href="">News</a></li>
+                    <li class="four"><a href="">Publication</a></li>
+                    <li class="five"><a href="">About Us</a></li>
+                </ul>
+            </div>
+        </header>
+    
+    
+        <!------- Common-ToggleMenu ------->
         <div class="inner">
             <ul class="menu">
                 <li class="menu-starter">
@@ -85,75 +177,52 @@
                 </li>
             </ul>
         </div>
+    
 
-        <section class="head-wrapper">
-            <header class="header-section">
-                <div class="main-header">
 
-                    <div class="header-style">
-                        <div class="logo-wrapper">
-                            <a href="../Home/Home.html">
-                                <img class="white-logo" src="../img/MafLogo_Green1.png" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <img class="header-hamburger" src="../img/hamburger-menu-black.png" alt="">
-                        </div>
-                    </div>
-
-                    <div class="clone-menu">
-                        <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
-                        </div>
-                        <ul class="clone-ul">
-                            <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
-                            <li class="two"><a href="../Artist/Artist_001.html">Artists</a></li>
-                            <li class="three"><a href="../News/News.html">News</a></li>
-                            <li class="four"><a href="../Publication/Publication.html">Publication</a></li>
-                            <li class="five"><a href="../AboutUs/AboutUs.html">About Us</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-                
-                
-                <div class="Arrow-Back">
-                    <a href="../Exhibition/Exhibition_001.html">
-                        <img src="../img/Arrow-back.png" alt="">
-                    </a>
-                </div>
-
-                </header>
+        <!------- Arrow-Back (Mobile) ------->
+        <section class="Arrow-Back-Mobile">
+            <div class="Arrow-Back">
+                <a href="../Home/Home.html">
+                    <img src="../img/Arrow-back.png" alt="">
+                </a>
+            </div>
         </section>
 
 
 
-        <!----- Exhibition002 Artist's Poster MainTitle ----->
-        <section>
+        <!------- Exhibition002 - Poster section (Mobile) ------->
+        <section class="poster-wrapper">
             <div class="poster-title">
-                <img src="../img/Ex002-Poster-Text.png" alt="">
+                <div class="text-img">
+                    <img src="../img/Ex002-Poster-Text.png" alt="">
+                </div>
             </div>
 
             <section class="poster-section">
-
                 <div class="poster-img">
-                    <img src="../img/Ex002-MainPoster.png" alt="">
+                    <div class="poster-main-img">
+                        <img src="../img/Ex002-MainPoster.png" alt="">
+                    </div>
                 </div>
                 <div class="poster-text">
                     <p>through june 29, 2024</p>
                 </div>
 
+
+                <!------- Artist name을 클릭했을 때, <a href="../Artist/Artist_002_Kor.html"> 빠진 상태 ------->
+                <!------- 원래는 링크 추가해서 클릭했을 때, Artist_002로 넘어가도록 ------->
+                <!------- Artist가 3명 이상일 때, Participate Modal을 추가하게 되면서 링크를 지움 ------->
                 <section class="poster-info">
-                    <a href="../Artist/Artist_002.html">
+                    
                         <div class="artist-name">
                             <h3>Artist name</h3>
                             <span></span>
                         </div>
-                    </a>
+                    
                     <div class="artist-text">
-                    <p>인식의 다름에 의하여 보통의 풍경은 언제고 새로운 모습으로 탈바꿈한다. 엄유정(b. 1985)의 그리기는 유연한 시간 속에서 진행된다.</p> 
-                    <p>관점에 따라 매번 달리 목격되는 대상의 생김새를 오래 관찰하고 회화로 옮겨낸다. 형태의 가능성을 다각도에서 발견하고자 하는 노력이다.</p> 
+                        <p>인식의 다름에 의하여 보통의 풍경은 언제고 새로운 모습으로 탈바꿈한다. 엄유정(b. 1985)의 그리기는 유연한 시간 속에서 진행된다.</p> 
+                        <p>관점에 따라 매번 달리 목격되는 대상의 생김새를 오래 관찰하고 회화로 옮겨낸다. 형태의 가능성을 다각도에서 발견하고자 하는 노력이다.</p> 
                     </div>
                     <div class="poster-into">
                         <p class="first-into">
@@ -175,6 +244,9 @@
         </section>
 
 
+
+
+
         <section class="Installation-view">
 
             <div class="view-wrapper">
@@ -186,77 +258,124 @@
 
             <!----- Exhibition002 - swiper ----->
             
-            
-
         </section>
 
 
         
         <!----- Exhibition002 - swiper ----->
         <!----- 이미지 클릭 시, Modal ----->
-        <div class="promotion">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" onclick=ClickHandler()>
-                        <img src="../img/Installation-view-img1.png" alt="">
+        <section class="Swipe-Modal-Mobile">
+            <div class="promotion">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="sdf" src="../img/Installation-view-img2.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img3.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img4.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Insallation-view-img5.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img6.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img7.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img8.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Installation-view-img9.png" alt="">
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="../img/Installation-view-img2.png" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/Installation-view-img3.png" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/Installation-view-img4.png" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/Insallation-view-img5.png" alt="">
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+                
+            </div>
+
+
+
+            <!------- Swipe - Modal창  ------->
+            <section id="modal" class="modal">
+                <div class="modal-close">
+                    <img src="../img/Modal-close-img.png" alt="">
+                </div>
+
+                <div class="modal-content">
+                    <div class="modal-img">
+                        <img src="../img/Installation-view-modal-img-mobile.png" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
+
+                <div class="modal-number">
+                    <div class="number-slide">
+                        <a href="javascript:void(0)">
+                            <img src="../img/Modal-Slideback.png" alt="">
+                        </a>
+                        <div class="slide-text">
+                            <span class="first-text">01 /</span>
+                            <span class="second-text">10</span>
+                        </div>
+                        <a href="javascript:void(0)">
+                            <img src="../img/Modal-Slidefront.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
 
         
-
-        <!------- Swipe - Modal창  ------->
-
-        <!-- Modal 구현 수정 해야함
-        <section id="modal" class="modal">
-            <div class="modal-close">
+        <!------- Participating Artist - Modal창  ------->
+                        
+        <!-- <section id="Part-modal" class="Part-modal">
+            <div class="modal-closen">
                 <img src="../img/Modal-close-img.png" alt="">
             </div>
 
-            <div class="modal-content">
-                <div class="modal-img">
-                    <img src="../img/Installation-view-modal-img-mobile.png" alt="">
+            <div class="modal-contents">
+                <div class="modal-header">
+                    <div class="header-text">
+                        <h2>Participating Artist</h3>
+                    </div>
+                    <span></span>
+                </div>
+
+                <div class="modal-artist">
+                    <span>안지산</span>
+                    <span>부지현</span>
+                    <span>변순철</span>
+                    <span>뷰엔 칼루바얀</span>
+                    <span>천치앙</span>
+                    <span>천윈쥔</span>
+                    <span>강철규</span>
+                    <span>최병소</span>
+                    <span>베슬리 드 차베즈</span>
+                    <span>돈선필</span>
+                    <span>아오노 후미아키</span>
+                    <span>가오레이</span>
                 </div>
             </div>
 
-            <div class="modal-number">
-                <div class="number-slide">
-                    <a href="javascript:void(0)">
-                        <img src="../img/Modal-Slideback.png" alt="">
-                    </a>
-                    <div class="slide-text">
-                        <span class="first-text">01 /</span>
-                        <span class="second-text">10</span>
-                    </div>
-                    <a href="javascript:void(0)">
-                        <img src="../img/Modal-Slidefront.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </section>
-        -->
+        </section> -->
+
+
 
 
         <!----- Exhibition002 Artist's info ----->
 
 
 
-
-        <!----- Works ----->
+        <!----- Works (Mobile) ----->
         <section class="works-section">
 
             <div class="works-wrapper">
@@ -310,17 +429,21 @@
                     <span class="text-four">61 x 46cm</span>
                 </div>
             </section>
+        </section>
 
 
-            <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
+        <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
+        <section class="view-more-Mobile">
             <div class="view-more">
                 <a href="javascript:void(0)">
                     <img src="../img/view-more-img.png" alt="">
                 </a>
             </div>
+        </section>
 
 
-            <!----- Footer ----->
+        <!----- Footer (Mobile) ----->
+        <section class="footer-Mobile">
             <section class="footer">
                 <span></span>
                 <div class="footer-icons">
@@ -329,6 +452,10 @@
                             <a href="https://www.instagram.com/mindful.art.forum/">
                                 <img src="../img/Insta_logo.png" alt="">
                             </a>
+                        </li>
+
+                        <li>
+                            <img class="to-contact-Kor" src="../img/Email-icon-Mobile.png" alt=""> 
                         </li>
 
                         <li>
@@ -344,15 +471,429 @@
                     <p>Seoul, Republic of Korea</p>
                 </div>
             </section>
+        </section>
 
-            <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
-            <div id="to-top">
+
+        <section class="to-top-Mobile">
+            <div class="to-top">
                 <div class="material-icons"></div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!------------------------------------------------------------------>
+    <!------------------------------ Web 시작 --------------------------->
+
+
+    <div class="Web-container">
+        <!------- Home-header-Web ------->
+        <div class="header-style">
+            <div class="logo-wrapper">
+                <a href="../Home/Home.html">
+                    <img class="white-logo" src="../img/Header-MAF_Logo_color.svg" alt="">
+                </a>
+            </div>
+
+            <div class="header-menu">
+                <ul class="header-ul">
+                    <a href="../Exhibition-Web/Exhibition_001_Web.html">
+                        <li class="Ex-header">Exhibitions</li>
+                    </a>
+
+                    <a href="../Artist-Web/Artist_001_Web.html">
+                        <li class="At-header">Artists</li>
+                    </a>
+
+                    <a href="../News-Web/News_Web.html">
+                        <li class="Ne-header">News</li>
+                    </a>
+
+                    <a href="../Publication-Web/Publication_Web.html">
+                        <li class="Pu-header">Publication</li>
+                    </a>
+
+                    <a href="../AboutUs-Web/AboutUs_Web.html">
+                        <li class="AU-header">About Us</li>
+                    </a>
+
+                    <a href="./Home_Web_Kor.html">
+                        <li class="EN">KR</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!----- Arrow-Back (Web) ----->
+        <div class="Arrow-Back-Web">
+            <a href="../Home/Home.html">
+                <img src="../img/Arrow-Back-Web.svg" alt="">
+            </a>
+        </div>
+
+
+        <!------- Swipe - Modal창  ------->
+        <section id="modal" class="modal">
+            <div class="modal-close">
+                <img src="../img/Modal-close-img.png" alt="">
+            </div>
+
+            <div class="modal-content">
+
+                <div class="modal-img">
+                    <img src="../img/Installation-View-Modal-img.png" alt="">
+                </div>
+
+                <div class="number-slide">
+                    <a href="javascript:void(0)">
+                        <img src="../img/Modal-Slideback.png" alt="">
+                    </a>
+                    <div class="slide-text">
+                        <span class="first-text">01 /</span>
+                        <span class="second-text">10</span>
+                    </div>
+                    <a href="javascript:void(0)">
+                        <img src="../img/Modal-Slidefront.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!------- Participate Artist - Modal창  ------->
+        <section id="Part-modal" class="Part-modal">
+            <div class="modal-closen">
+                <img src="../img/Modal-close-img.png" alt="">
+            </div>
+
+            <div class="modal-contents">
+                <div class="modal-header">
+                    <div class="header-text">
+                        <h2>Participating Artist</h3>
+                    </div>
+                    <span></span>
+                </div>
+
+                <div class="modal-artist">
+                    <span>안지산</span>
+                    <span>부지현</span>
+                    <span>변순철</span>
+                    <span>뷰엔 칼루바얀</span>
+                    <span>천치앙</span>
+                    <span>천윈쥔</span>
+                    <span>강철규</span>
+                    <span>최병소</span>
+                    <span>베슬리 드 차베즈</span>
+                    <span>돈선필</span>
+                    <span>아오노 후미아키</span>
+                    <span>가오레이</span>
+                </div>
             </div>
 
         </section>
 
+
+        
+        <!------- EX002-main-section -------> 
+        <!------- 페이지에서 중앙의 모든 섹션이라는 뜻 ------->
+        <section class="main-section">
+
+            <!------- Title-section ------->
+            <section class="title-section">
+                <div class="main-title">
+                    <img src="../img/Artist-banner-title.png" alt="">
+                </div>
+
+                <div class="main-img">
+                    <img src="../img/Artist-title-img.png" alt="">
+                </div>
+
+                <div class="title-date">
+                    <span>through june</span>
+                    <span>29, 2024</span>
+                </div>
+
+
+
+                <!------- Artist name을 클릭했을 때, <a href="../Artist-Web/Artist_002_Web.html"> 빠진 상태 ------->
+                <!------- 원래는 링크 추가해서 클릭했을 때, Artist_002로 넘어가도록 ------->
+                <!------- Artist가 3명 이상일 때, Participate Modal을 추가하게 되면서 링크를 지움 ------->
+                <section class="content-section">
+                    <div class="artist-name">
+                        <div class="artist-first-name">
+                            <h2>Artist name</h2>
+                        </div>
+
+                        <div class="artist-second-name">
+                            <h2>Artist</h2>
+                        </div>
+
+                        <div class="artist-third-name">
+                            <h2>Artist name01</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="artist-info">
+                        <div class="artist-text">
+                            인식의 다름에 의하여 보통의 풍경은 언제고 새로운 모습으로 탈바꿈한다. 엄유정(b. 1985)의 그리기는 유연한 시간 속에서 진행된다.
+                            <br>관점에 따라 매번 달리 목격되는 대상의 생김새를 오래 관찰하고 회화로 옮겨낸다. 형태의 가능성을 다각도에서 발견하고자 하는 노력이다. 
+                        </div>
+
+                        <div class="info-wrapper">
+                            <div class="artist-viewing-room">
+                                <div class="viewing-room-info">
+                                    <div class="ii">
+                                        Viewing room
+                                    </div>
+                                    <a href="javascript:void(0)">
+                                        <img src="../img/Viewing-Room-icon-Web.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="artist-download">
+                                <div class="artist-download-info">
+                                    DOWNLOAD PRESS RELEASE
+                                    <a href="javascript:void(0)">
+                                        <img class="aa" src="../img/Download-icon-Web.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+
+
+
+
+
+            <!------- Installation-View ------->
+            <div class="Installation-header">
+                <h2>Installation View</h2>
+                <span></span>
+            </div>
+    
+            <section class="Installation-section">
+    
+                <!-- swipe 부분의 title 및 text 부분인데 이미지만 swipe되고,
+                이 부분은 안되고 있어서 이를 주석처리하고 swipe 부분 안에다가 넣어줌 
+                <div class="Upcoming-title">
+                    <div class="Upcoming-main-title">
+                        <h4>TITLE: Exhibition name</h4>
+                    </div>
+    
+                    <div class="Upcoming-sub-title">
+                        <p class="first-title">Sub content notation</p>
+                        <p class="second-title">2024.06.11~20</p>
+                    </div>
+                </div>
+                -->
+    
+                <!------- Upcoming-Swipe ------->
+                <div class="promotion">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+    
+                                <div class="swiper-img">
+                                    <img src="../img/Installation-img-first.png" alt="">
+                                </div>
+    
+                            </div>
+                            <div class="swiper-slide">
+    
+                                <div class="swiper-img">
+                                    <img src="../img/Installation-img-second.png" alt="">
+                                </div>
+    
+                            </div>
+                            <div class="swiper-slide">
+
+                                <div class="swiper-img">
+                                    <img src="../img/Installation-img-third.png" alt="">
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    <!-- swipe에서 하단의 동그란 버튼
+                    <div class="swiper-pagination"></div>
+                    -->
+                    
+                </div>
+                
+            </section>
+
+
+
+            <!------- Works ------->
+            <section class="works-sections">
+                <div class="works-title">
+                    <span></span>
+                    <h2>Works</h2>
+                </div>
+
+                <section class="works-img">
+
+                    <section class="works-first-section">
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="first-img">
+                                <img class="first-img-hover" src="../img/Works-one-img.png" alt="">
+                                <div class="first-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="second-img">
+                                <img class="second-img-hover" src="../img/Works-two-img.png" alt="">
+                                <div class="second-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+
+                    <section class="works-second-section">
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="third-img">
+                                <img class="third-img-hover" src="../img/Works-three-img.png" alt="">
+                                <div class="third-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="four-img">
+                                <img class="four-img-hover" src="../img/Works-four-img.png" alt="">
+                                <div class="four-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+
+                    <section class="works-third-section">
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="five-img">
+                                <img class="five-img-hover" src="../img/Works-five-img.png" alt="">
+                                <div class="five-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="./Exhibition_004_Web.html">
+                            <div class="six-img">
+                                <img class="six-img-hover" src="../img/Works-six-img.png" alt="">
+                                <div class="six-info">
+                                    <span class="first-one-text">Display of Art Titles ‘ABCDEF’</span>
+                                    <span class="first-two-text">2024</span>
+                                    <span class="first-three-text">Pencil, Charcoal, Ink, Pen, Watercolor, Acrylic, Oil Paint, Oil Pastel, Soft Pastel, Oven-bake Clay, Air-dry Clay, Aluminum, Copper</span>
+                                    <span class="first-four-text">61 x 46cm</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+
+                </section>
+
+                <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
+                <div class="view-more-Web">
+                    <a href="javascript:void(0)">
+                        <img src="../img/view-more-img.png" alt="">
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- Viewing Room -->
+            <section class="viewing-room">
+                <div class="viewing-img">
+                    <img src="../img/Viewing-Room-img.png" alt="">
+                </div>
+                <div class="viewing-text">
+                    <h3>VIEWING ROOM</h3>
+                </div>
+            </section>
+
+        </section>
+
+
+        <!------- footer-Web ------->
+        <section class="footer-Web">
+            <section class="footer">
+            <span></span>
+            <div class="footer-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/mindful.art.forum/">
+                            <img src="../img/Insta-Web-logo.svg" alt="">
+                        </a>
+                    </li>
+
+                    <li>           
+                        <img class="to-contact" src="../img/Email-Web-logo.svg" alt=""> 
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <img src="../img/Youtube-Web-logo.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-text">
+                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu, Seoul, Republic of Korea</p>
+            </div>
+            </section>
+        </section>
+        
+        <!-- To-top (Web) -->
+        <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
+        <section class="to-top-Web">
+            <div class="to-tops">
+                <div class="material-icons"></div>
+            </div>
+        </section>
+
     </div>
+
+
+
+
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 </html>

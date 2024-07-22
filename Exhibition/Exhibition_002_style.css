@@ -66,569 +66,611 @@ a {
 
 /***************** Layout *****************/
 
-/* 이 부분의 때문에 Arrow-back이 안보이고 있었음 */
-.header-section .main-header {
-    position: fixed;
 
-    /* 모든 컨텐츠가 헤더위로 올라가지 않도록 최상위로 줌 */
-    z-index: 9999;
+
+  /* Exhibition001에서 header의 반응형 속성을 그대로 가져옴!!!!!!!!!!!!!!!! */
+  /******* Mobile Common-header *******/
+/* banner에 position: relative;를 주면, Toggle-Menu를 클릭했을 때, banner-text가 겹쳐보임 */
+/* .banner {
+  position: relative;
+} */
+
+.banner {
+  width: 360px;
+}
+
+.banner .banner-header {
+  display: flex;
+  width: 100%;
+  padding: 12px 15px;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #FFF;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+
+  position: fixed;
+  z-index: 999;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0; 
 }
 
 
 
-header .inner {
-    background-repeat: no-repeat;
-    background-size: contain;
-    max-width: 1020px;
-  }
-
-  header .mobile-layout {
-    display: none;
-  }
-
 /* toggle 메뉴 버튼을 맨 꼭대기로 올리기 위해 position과 top사용 */
-  header ul.menu {  
-    display: flex;
-    justify-content: space-between;
-    height: var(--header-height);
-    
-  }
-
-  header ul.menu > li {
-    display: flex;
-    position: relative;
-    cursor: pointer;
-    transition: .4s;
-    
-  }
-
-  header ul.menu > li.menu-starter {
-    display: none;
-  }
+header ul.menu {  
+  display: flex;
+  justify-content: space-between;
+  height: var(--header-height);
   
-  header ul.menu > li > a {
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    font-size: 11px;
-    color: var(--color-font-lightgray);
-    opacity: .8;
-  }
- 
-  html.fixed {
-    position: fixed;
-    overflow-y: scroll;
+}
+
+header ul.menu > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: .4s;
+}
+
+header ul.menu > li.menu-starter {
+  display: none;
+}
+
+header ul.menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  color: var(--color-font-lightgray);
+  opacity: .8;
+}
+
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+
+header.searching ul.menu > li {
+  transform: scale(.7);
+  opacity: 0;
+}
+
+header.searching .search-wrap {
+  transition-delay: .2s;
+  opacity: 1;
+  visibility: visible;
+}
+
+header.searching .search input,
+header.searching .search .search-icon,
+header.searching .search .autocompletes h3,
+header.searching .search .autocompletes li {
+  transition-delay: .2s;
+  transform: translate(0, 0);
+}
+
+
+header .clone-menu {
+  display: none;
+  
+}
+
+.clone-menu .clone-in-menu .Toggle_lang {
+  display: flex;
+  padding: 0px 10px; 
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; 
+  letter-spacing: -0.396px;
+
+  opacity: 0.7;
+
+  
+}
+
+.clone-ul li a {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; 
+  letter-spacing: -0.396px;
+
+  opacity: 0.7;
+
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* clone-menu에서 각 메뉴를 클릭할 때 */
+.clone-ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.clone-ul li a:visited {
+  color: black;
+}
+
+.clone-ul li a:active {
+  color: black;
+}
+
+.Header-img {
+  width: 100vw;
+  
+}
+
+/* 여기서 부터 clone 메뉴에 관한 내용 (기억하기) */
+header::before {
+  content: "";
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--color-header);
+  transition: .4s;
+
+  
+}
+
+
+/*
+header ul.menu {
+  position: absolute;
+  top: 0px;
+}
+*/
+
+header ul.menu > li {
+  display: none;
+  
+}
+
+header ul.menu > li.menu-starter,
+header ul.menu > li.apple-logo,
+header ul.menu > li.basket-starter {
+  display: flex;
+}
+
+header ul.menu > li.menu-starter div {
+  margin-top: 50px;
+}
+
+header ul.menu > li.menu-starter span {
+  display: block;
+  width: 15px;
+  height: 1px;
+  background-color: var(--color-white);
+  margin-bottom: 6px;
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+
+  /* margin-left
+  모바일 화면에서 햄버거 메뉴를 나타내는
+  부분인데 화면에 보이는 것은
+  집에서는 450px, 
+  회사에서는 400px로 다름 */
+  
+  margin-left: 380px;
+}
+
+
+header ul.menu > li.menu-starter span:last-child {
+  margin-bottom: 0;
+}
+
+header.menuing {
+  background-color: var(--color-white);
+  
+  z-index: 9999;
+}
+
+header.menuing::before {
+  height: 100vh;
+  top: 0px;
+  background-color: var(--color-white);
+
+  z-index: 9999;
+}
+
+
+header.menuing ul.menu > li.menu-starter span:first-child {
+  transform: translate(0, 3.5px) rotate(45deg);
+  background-color: var(--color-black);
+}
+
+header.menuing ul.menu > li.menu-starter span:nth-child(2) {
+  transform: translate(0, -3.5px) rotate(-45deg);
+  background-color: var(--color-black);
+}
+
+header.menuing ul.menu > li.menu-starter span:last-child {
+  display: none;
+}
+
+header.menuing ul.menu > li.menu-starter span {
+  
+}
+
+
+/* 수정 사항 - 720px 시, 
+toggle 메뉴를 클릭한 clone 메뉴가 보일때의 코딩인데 
+여기서 text를 왼쪽으로 200px, padding: 0 20px; 없앴음 */
+header .clone-menu {
+  margin: 0 auto;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  text-align: center;
+
+  width: 100%;
+  box-sizing: border-box;
+  transition: .4s;
+  transform: translate(0, -50px);
+
+  z-index: 9999;
+}
+
+header .clone-in-menu {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 21.5px 25px;
+  
+  align-items: center;
+  
+}
+
+header .clone-in-menu .Toggle_EN {
+  
+}
+
+header .clone-in-menu .Toggle_Close {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+
+header .clone-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  margin-top: 50px;
+  
+
+}
+
+header.menuing .clone-menu {
+  transform: translate(0, 0);
+  visibility: visible;
+  opacity: 1;
+
+  
+}
+
+
+
+
+
+
+
+/******* (모바일 -> 웹)반응형 *******/
+@media (max-width: 500px) {
+  .banner {
+  
+    max-width: 100%;
+    overflow: hidden;
     width: 100%;
+    /* 여기 height값으로 clone-menu가 보여주는중 */
+    /* height: 504px; */
+    flex-shrink: 0;
+    height: 30px;
+  }
+
+
+  .Upcoming-header-Mobile {
+    max-width: 100%;
+  }
+
+  .Upcoming-section-Mobile,
+  .Upcoming-section,
+  .Past-Wrapper-Mobile,
+  .Past-img-Mobile {
+    max-width: 100%;
   }
   
-  
-  header.searching ul.menu > li {
-    transform: scale(.7);
-    opacity: 0;
-  }
-  header.searching .search-wrap {
-    transition-delay: .2s;
-    opacity: 1;
-    visibility: visible;
-  }
-  header.searching .search input,
-  header.searching .search .search-icon,
-  header.searching .search .autocompletes h3,
-  header.searching .search .autocompletes li {
-    transition-delay: .2s;
-    transform: translate(0, 0);
-  }
-  
-  
-  header .clone-menu {
+
+  .header-style {
+    visibility: hidden;
     display: none;
   }
 
 
-  .main-header {
-    
-
-    
-  } 
-  
-  
-  
-  /* clone-menu에서 각 메뉴를 클릭할 때 */
-  .clone-ul li a {
-    color: black;
-    text-decoration: none;
+  .banner-text {
+    visibility: hidden;
+    display: none;
   }
 
-  .clone-ul li a:visited {
-    color: black;
+  /******* Web 컨텐츠들을 안보이도록 (모바일 기준) *******/
+  .Web-container {
+    visibility: hidden;
+    display: none; 
   }
 
-  .clone-ul li a:active {
-    color: black;
+  .Ex-head {
+    padding-top: 84px;
   }
 
-  .Header-img {
-    width: 100vw;
-    
+  .Arrow-Back-Mobile {
+    position: absolute;
+    top: 74px;
+    left: 15px;
   }
 
+  .to-top-Web {
+    display: none;
+    visibility: hidden;
+  }
 
-  /***************** Mobile Layout *****************/
-    @media (max-width: 720px) {
-    /* 모바일 720까지의 레이아웃 */ 
-    .wrapper {
-      width: 360px;
-      
-  
-      /* 하단의 top으로 올라오는 to-top버튼을
-      보여드리기 위해서 임의로 height: 500vh 정도로
-      지정함 - 원래는 height: 1047px */
-      
-      
-    }
-  
-    .wrapper .head-wrapper {
-      /* Figma에는 width의 값이 
-      모바일 기준 360px으로 잡고 가는건데,
-      브라우저에서는 최대로 줄일 때,
-      433px이 되서
-      이미지 가로를 최대로 채우기 위해
-      width값을 임의의 값인 96.2vw로 줬다.*/
-      width: 360px;
-      
-      border-radius: 0px 0px 100px 0px;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
-      background-size: cover;
-    }
-  
-    .header-section {
-      width: 100%;
-      
-      position: relative;
-    }
-  
-    .Header-img {
-      box-sizing: border-box;    
-      
-     
-    }
-    
-    
-  
-  
-    /* Header 전체 배경 */
-  
-    .header-style {
-      width: 360px;
-      
-      display: flex;
-      justify-content: space-between;
-  
-      align-items: center;
-  
-      padding: 12px 15px;
-  
-      background: #FFF;
-      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-    }
-  
-    .logo-wrapper {
-      
-    }
-    
-    .header-style .hamburger-img {
-      
-      flex-shrink: 0;
-      
-    }
-  
-  
-    
-    
-  
-      
-      /* 스크롤을 내릴 때, 
+  /***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+  .to-top {
+    width: 28px;
+    height: 28px;
+    background-color: #FFF;
+
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    z-index: 9;
+
+    background-image: url('../img/To-top-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .material-icons {
+    font-size: 30px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 3px;
+    right: 4px;
+    margin: auto;
+    /* opacity: 1; -> 화살표가 잘 보임 */
+    opacity: 1;
+    transition: 0.4s; 
+  }
+
+  /* 스크롤을 내릴 때, 
       헤더가 바뀌는 부분을 구현
       .sub-header {
         
         width: 20vw;
         margin: 30px 0 0 30px;
       }
-      */
-  
-      header::before {
-        content: "";
-        position: fixed;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: var(--color-header);
-        transition: .4s;
-    }
-    
-    
-    /*
-    header ul.menu {
-      position: absolute;
-      top: 0px;
-    }
-    */
-  
-    header ul.menu > li {
-      display: none;
-    }
-    
-    header ul.menu > li.menu-starter,
-    header ul.menu > li.apple-logo,
-    header ul.menu > li.basket-starter {
-      display: flex;
-    }
-  
-    header ul.menu > li.menu-starter div {
-      margin-top: 50px;
-    }
-  
-    header ul.menu > li.menu-starter span {
-      display: block;
-      width: 15px;
-      height: 1px;
-      background-color: var(--color-white);
-      margin-bottom: 6px;
-      transition: .4s;
-      -webkit-transition: .4s;
-      -moz-transition: .4s;
-      -ms-transition: .4s;
-      -o-transition: .4s;
-    
-      /* margin-left
-      모바일 화면에서 햄버거 메뉴를 나타내는
-      부분인데 화면에 보이는 것은
-      집에서는 450px, 
-      회사에서는 400px로 다름 */
-      
-      margin-left: 380px;
-    }
+  */
   
     
-    header ul.menu > li.menu-starter span:last-child {
-      margin-bottom: 0;
-    }
-    
-    header.menuing {
-      background-color: var(--color-white);
-    }
   
-    header.menuing::before {
-      height: 100vh;
-      top: 0px;
-      background-color: var(--color-white);
-    }
-  
+  /************** Exhibition002 - Artist's Poster MainTitle **************/
+  .poster-wrapper {
+    width: 100%;
 
-    /******* clone-menu의 내용을 나타냄 *******/
-    header.menuing .clone-menu {
-        transform: translate(0, 0);
-        visibility: visible;
-        opacity: 1;
-        background-color: var(--color-white);
-        height: 100vh;
-    }
+    display: flex;
+    padding: 90px 0px 15px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .poster-title {
+    width: 91.7%;
+    
+    margin-top: 40px;
+  }
+
+
+  /************** Exhibition002 - Artist's info **************/
+  .poster-section {
+    position: relative;
+    width: 67.5%;
+    
+  } 
+
+  .poster-title img {
+    position: absolute;
+    z-index: 9;
+  }
+
+
+  .poster-section .poster-text {
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 70%;
+    
+    margin-left: 116.5px;
+  }
 
 
 
+  /************** Exhibition002 - Artist's info **************/
+  .poster-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
 
-    header.menuing ul.menu > li.menu-starter span:first-child {
-      transform: translate(0, 3.5px) rotate(45deg);
-      background-color: var(--color-black);
-    }
-  
-    header.menuing ul.menu > li.menu-starter span:nth-child(2) {
-      transform: translate(0, -3.5px) rotate(-45deg);
-      background-color: var(--color-black);
-    }
-  
-    header.menuing ul.menu > li.menu-starter span:last-child {
-      display: none;
-    }
-  
-    header.menuing ul.menu > li.menu-starter span {
-      
-    }
+    width: 100%;
+    margin-top: 53px;
+  }
+
+  .poster-info .artist-name h3 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 28px */
+    letter-spacing: -0.616px;
+
     
-  
-    /* 수정 사항 - 720px 시, 
-    toggle 메뉴를 클릭한 clone 메뉴가 보일때의 코딩인데 
-    여기서 text를 왼쪽으로 200px, padding: 0 20px; 없앴음 */
-    header .clone-menu {
-      margin: 0 auto;
-      display: block;
-      visibility: hidden;
-      opacity: 0;
-  
-      position: absolute;
-      top: 0px;
-      left: 0px;
-  
-      text-align: center;
-  
+  }
+
+  .poster-info .artist-name span {
+    display: block;
+    align-self: stretch;
+    margin-top: 6px;
+    border: 1px solid #000;
+    border-style: 1px;
+
+    margin-bottom: 10px;
+  }
+
+  .poster-info .artist-text {
+    align-self: stretch;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 28.8px */
+    letter-spacing: -0.396px;
+
+    width: 100%;
+  }
+
+
+  .poster-info .poster-into {
+    display: flex;
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+
+  }
+
+  .poster-info .poster-into .first-into {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 13px */
+    letter-spacing: -0.286px;
+    text-transform: uppercase;
+
+  }
+
+  .poster-info .poster-into .first-into a {
+    z-index: 99;
+  }
+
+
+  .poster-info .poster-into .second-into {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 13px */
+    letter-spacing: -0.286px;
+    text-transform: uppercase;
+  }
+
+
+  /************** Installation View **************/
+  .Installation-view {
+    display: flex;
+    padding: 0px 15px;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+
+    width: 100%;
+    margin-top: 90px;
+}
+
+
+  .Installation-view .view-wrapper {
       width: 100%;
-      box-sizing: border-box;
-      transition: .4s;
-      transform: translate(0, -50px);
-  
-      z-index: 9999;
-    }
-  
-    header .clone-in-menu {
-      width: 100%;
-  
-      display: flex;
-      justify-content: space-between;
-      padding: 21.5px 25px;
-      
-      align-items: center;
-    }
-  
-    header .clone-in-menu .Toggle_EN {
-      
-    }
-  
-    header .clone-in-menu .Toggle_Close {
-      margin-left: 264px;
-    }
-    
-  
-    header .clone-ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 50px;
-  
-      margin-top: 50px;
-    }
-    
-    
+  }
 
 
+  .Installation-view .view-wrapper .view-title {
+      color: #000;
+      font-family: SUIT;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 100%; /* 52px */
+      letter-spacing: -1.144px;
 
-    /************** Exhibition002 - Artist's Poster MainTitle **************/
-    .poster-title {
-        width: 330px;
-        
-        margin: 40px 15px 0;
-    }
-
-
-    /************** Exhibition002 - Artist's info **************/
-    .poster-title img {
-        position: relative;
-        z-index: 9;
-    }
-    
-    .poster-section {
-        width: 243px;
-
-        margin: -78px 58.5px 0;
-        position: absolute;
-    } 
+      width: 61.9%;
+  }
 
 
-    .poster-section .poster-text {
-        color: #000;
-        font-family: SUIT;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: bold;
-        line-height: 150%; /* 27px */
-        letter-spacing: -0.396px;
-
-        width: 170px;
-        
-        margin-left: 116.5px;
-    }
-
-    .poster-section .poster-text p {
-        
-    }
-
-
-
-    /************** Exhibition002 - Artist's info **************/
-    .poster-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        align-self: stretch;
-
-        width: 243px;
-        margin-top: 53px;
-    }
-
-    .poster-info .artist-name h3 {
-        color: #000;
-        font-family: SUIT;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: bold;
-        line-height: 100%; /* 28px */
-        letter-spacing: -0.616px;
-
-        
-    }
-
-    .poster-info .artist-name span {
-        display: block;
-        align-self: stretch;
-        margin-top: 6px;
-        border: 1px solid #000;
-        border-style: 1px;
-
-        margin-bottom: 10px;
-    }
-
-    /* font-weight: 400이었는데 900으로 바꿔놓음
-    디자인이랑 너무 다른 느낌이 들어서 임의로 바꿈
-    400은 너무 얇고, 900으로 해야 비슷하게 보임 */
-    .poster-info .artist-text {
-        align-self: stretch;
-
-        color: #000;
-        font-family: SUIT;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 160%; /* 28.8px */
-        letter-spacing: -0.396px;
-
-        
-        width: 243px;
-        
-    }
-    
-    
-    .poster-info .poster-into {
-        display: flex;
-        padding-top: 30px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        align-self: stretch;
-    }
-
-    .poster-info .poster-into .first-into {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 8px;
-
-        color: #000;
-        text-align: center;
-        font-family: SUIT;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%; /* 13px */
-        letter-spacing: -0.286px;
-        text-transform: uppercase;
-    }
-
-    .poster-info .poster-into .first-into a {
-      z-index: 999;
-    }
-
-
-    .poster-info .poster-into .second-into {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-
-        color: #000;
-        text-align: center;
-        font-family: SUIT;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%; /* 13px */
-        letter-spacing: -0.286px;
-        text-transform: uppercase;
-    }
-
-
-    /************** Installation View **************/
-    .Installation-view {
-        display: flex;
-        padding: 0px 15px;
-        align-items: center;
-        gap: 22px;
-        align-self: stretch;
-
-        width: 360px;
-        margin-top: 842px;
-    }
-
-
-    .Installation-view .view-wrapper {
-        width: 330px;
-    }
-
-
-    .Installation-view .view-wrapper .view-title {
-        color: #000;
-        font-family: SUIT;
-        font-size: 52px;
-        font-style: normal;
-        font-weight: 100;
-        line-height: 100%; /* 52px */
-        letter-spacing: -1.144px;
-
-        width: 223px;
-    }
-
-
-    .Installation-view .view-wrapper .view-title span {
-        display: block;
-
-        height: 1px;
-        flex: 1 0 0;
-
-        border: 1px solid #D9D9D9;
-        
-        width: 85px;
-        margin-left: calc(260px - 15px);
-        margin-top: -51.5px;
-    }
-
-
-
-    /************** Works **************/
-    .works-section {
-      display: flex;
-      width: 330px;
-      padding-bottom: 30px;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-
-      margin: 0 15px 0;
-    }
-
-    .works-section .works-wrapper {
-      width: 330px;
-      height: 78px;
-
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      align-self: stretch;
-    }
-
-    .works-section .works-wrapper .works-title {
-      display: flex;
-    }
-
-    .works-section .works-wrapper .works-title span {
+  .Installation-view .view-wrapper .view-title span {
       display: block;
 
       height: 1px;
@@ -636,511 +678,1937 @@ header .inner {
 
       border: 1px solid #D9D9D9;
       
-      width: 169px;
-      margin-top: 38.5px;
-    }
-
-    .works-section .works-wrapper .works-title h2 {
-      margin-left: 22px;
-
-      color: #000;
-      font-family: SUIT;
-      font-size: 52px;
-      font-style: normal;
-      font-weight: 100;
-      line-height: 150%; /* 78px */
-      letter-spacing: -1.144px;
-    }
-
-
-    /************** Works-first-section **************/
-    .works-section .first-works {
-      width: 329px;
-
-      display: flex;
+      width: 41.6%;
       
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 26px;
-    }
+      margin-left: 240px;
+      margin-top: -51.5px;
+  }
 
 
-    /***** 이미지 hover시 변화 - ZOOM *****/
-    .works-section .first-works .first-img,
-    .works-section .second-works .second-img,
-    .works-section .third-works .third-img {
-      overflow: hidden; /* 이미지가 확대될 때, 이미지 바 */
-    }
-
-    .works-section .first-works .img-hover,
-    .works-section .second-works .img-hover,
-    .works-section .third-works .img-hover {
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-      -moz-transform: scale(1.0);
-      -ms-transform: scale(1.0);
-      -o-transform: scale(1.0);
-
-      transition: transform 0.7s;
-    }
-
-    .works-section .first-works .img-hover:hover,
-    .works-section .second-works .img-hover:hover,
-    .works-section .third-works .img-hover:hover {
-      transform: scale(1.06);
-      -webkit-transform: scale(1.06);
-      -moz-transform: scale(1.06);
-      -ms-transform: scale(1.06);
-      -o-transform: scale(1.06);
-
-      transition: transform 0.7s;
-    }
-
-
-    .works-section .first-works .first-text {
-      display: flex;
-      padding: 0px 10px;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      align-self: stretch;
-    }
-
-    .works-section .first-works .first-text .text-one {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-
-    .works-section .first-works .first-text .text-two {
-      color: #000;
-      text-align: center;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-    
-    .works-section .first-works .first-text .text-three {
-      overflow: hidden;
-      color: #000;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 100%; /* 14px */
-      letter-spacing: -0.308px;
-
-      height: 28px;
-      align-self: stretch;
-    }
-
-    .works-section .first-works .first-text .text-four {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 21px */
-      letter-spacing: -0.308px;
-    }
-    
-
-    /************** middle-border **************/
-    .middle-first-border {
-      width: 100px;
-      height: 1px;
-      border: 1px solid lightgray;
-
-      margin-top: 30px;
-    }
-    
-
-    /************** Works-second-section **************/
-    .works-section .second-works {
-      width: 329px;
-
-      display: flex;
-      
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 26px;
-    }
-
-
-    .works-section .second-works .second-text {
-      display: flex;
-      padding: 0px 10px;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      align-self: stretch;
-    }
-
-    .works-section .second-works .second-text .text-one {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-
-    .works-section .second-works .second-text .text-two {
-      color: #000;
-      text-align: center;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-    
-    .works-section .second-works .second-text .text-three {
-      overflow: hidden;
-      color: #000;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 100%; /* 14px */
-      letter-spacing: -0.308px;
-
-      height: 28px;
-      align-self: stretch;
-    }
-
-    .works-section .second-works .second-text .text-four {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 21px */
-      letter-spacing: -0.308px;
-    }
-
-
-    /************** middle-border **************/
-    .middle-second-border {
-      width: 100px;
-      height: 1px;
-      border: 1px solid lightgray;
-    }
-
-
-    /************** Works-third-section **************/
-    .works-section .third-works {
-      width: 329px;
-
-      display: flex;
-      
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 26px;
-    }
-
-
-    .works-section .third-works .third-text {
-      display: flex;
-      padding: 0px 10px;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      align-self: stretch;
-    }
-
-    .works-section .third-works .third-text .text-one {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-
-    .works-section .third-works .third-text .text-two {
-      color: #000;
-      text-align: center;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; /* 27px */
-      letter-spacing: -0.396px;
-    }
-    
-    .works-section .third-works .third-text .text-three {
-      overflow: hidden;
-      color: #000;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 100%; /* 14px */
-      letter-spacing: -0.308px;
-
-      width: 309px;
-      align-self: stretch;
-    }
-    
-    .works-section .third-works .third-text .text-four {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%; /* 21px */
-      letter-spacing: -0.308px;
-    }
-
-
-    .view-more {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-      align-self: stretch;
-
-      width: 330px;
-      
-      padding: 30px 10px 10px 10px;
-      
-    }
-
-
-    /************** footer **************/
-    .footer {
-      margin: 96px 15px 0 15px;
-
-      display: flex;
-      width: 360px;
-      height: 453px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 70px;
-      flex-shrink: 0;
-      
-      border-top: 1px solid lightgray; 
-    }
-
-
-    .footer-icons {
-      
-    }
-
-    .footer-icons ul {
-      display: flex;
-      
-      justify-content: space-between;
-      align-items: flex-start;
-      align-self: stretch;
-
-      gap: 46.67px;
-    }
-
-    .footer .footer-text {
-      color: #000;
-      text-align: center;
-      font-family: SUIT;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 150%; /* 18px */
-      letter-spacing: -0.264px;
-    }
-
-
-
-    /***** 반응형 720px까지 적용 중, 추가할 부분 여기부터 *****/
-    
-
-
-    /* 화살표 뒤로가는 부분 
-    (Home으로 되돌아가는 부분) */
-    .Arrow-Back img {
-      margin-top: 74px;
-      margin-left: 15px;
-    }
-    
-}
-
-
-  /******* Swiper - margin이든 padding이든 임의로 정한 값 *******/
   .promotion {
-      display: flex;
-      padding-left: 15px;
-      align-items: flex-end;
-      gap: 6px;
-      align-self: stretch;
-
-      padding: 82px;
-      margin-left: -65px;
-
-      width: 495px;
+    margin: 82px 15px 0;
+    
   }
 
-  .promotion .swiper-container {
-    margin-bottom: 30px;
+
+
+  /************** Works **************/
+  .works-section {
+    display: flex;
+    width: 91.6%;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    margin: 90px 15px 0;
+  }
+
+  .works-section .works-wrapper {
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+  }
+
+  .works-section .works-wrapper .works-title {
+    display: flex;
+  }
+
+  .works-title {
+    width: 100%;
+  }
+
+  .works-section .works-wrapper .works-title span {
+    display: block;
+
+    height: 1px;
+    flex: 1 0 0;
+
+    border: 1px solid #D9D9D9;
+    
+    margin-top: 38.5px;
+  }
+
+  .works-section .works-wrapper .works-title h2 {
+    margin-left: 22px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%; /* 78px */
+    letter-spacing: -1.144px;
+  }
+
+
+  /************** Works-first-section **************/
+  .works-section .first-works {
+    width: 100%;
+
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+
+  /***** 이미지 hover시 변화 - ZOOM *****/
+  .works-section .first-works .first-img,
+  .works-section .second-works .second-img,
+  .works-section .third-works .third-img {
+    overflow: hidden; /* 이미지가 확대될 때, 이미지 바 */
+  }
+
+  .works-section .first-works .img-hover,
+  .works-section .second-works .img-hover,
+  .works-section .third-works .img-hover {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    -o-transform: scale(1.0);
+
+    transition: transform 0.7s;
+  }
+
+  .works-section .first-works .img-hover:hover,
+  .works-section .second-works .img-hover:hover,
+  .works-section .third-works .img-hover:hover {
+    transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+
+    transition: transform 0.7s;
+  }
+
+
+  .works-section .first-works .first-text {
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-section .first-works .first-text .text-one {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 69.7%;
+  }
+
+  .works-section .first-works .first-text .text-two {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 11.4%;
+  }
+
+  .works-section .first-works .first-text .text-three {
+    overflow: hidden;
+    color: #000;
+    text-align: center;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.308px;
+
+    height: 28px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-section .first-works .first-text .text-four {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.308px;
+
+    width: 19.7%;
+  }
+
+
+  /************** middle-border **************/
+  .middle-first-border {
+    width: 30.3%;
+    height: 1px;
+    border: 1px solid lightgray;
+
+    margin-top: 30px;
+  }
+
+
+  /************** Works-second-section **************/
+  .works-section .second-works {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+
+    width: 100%;
+  }
+
+
+  .works-section .second-works .second-text {
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-section .second-works .second-text .text-one {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 69.7%;
+  }
+
+  .works-section .second-works .second-text .text-two {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 11.4%;
+  }
+
+  .works-section .second-works .second-text .text-three {
+    overflow: hidden;
+    color: #000;
+    text-align: center;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.308px;
+
+    width: 100%;
+    height: 28px;
+    align-self: stretch;
+  }
+
+  .works-section .second-works .second-text .text-four {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.308px;
+    
+    width: 19.7%;
+  }
+
+
+  /************** middle-border **************/
+  .middle-second-border {
+    width: 30.3%;
+    height: 1px;
+    border: 1px solid lightgray;
+  }
+
+
+  /************** Works-third-section **************/
+  .works-section .third-works {
+    width: 100%;
+
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+
+  .works-section .third-works .third-text {
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-section .third-works .third-text .text-one {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 69.7%;
+  }
+
+  .works-section .third-works .third-text .text-two {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 11.4%;
+  }
+
+  .works-section .third-works .third-text .text-three {
+    overflow: hidden;
+    color: #000;
+    text-align: center;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.308px;
+
+    width: 100%;
+    height: 28px;
+    align-self: stretch;
+  }
+
+  .works-section .third-works .third-text .text-four {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.308px;
+
+    width: 19.7%;
+  }
+
+
+  .view-more {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+
+    width: 100%;
+    
+    padding: 30px 10px 10px 10px;
+  }
+
+
+  /***** Click 시, img-Modal창 구현 *****/
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.8); 
+  }
+
+  .modal .modal-close {
+    width: 8.3%;
+    height: 8.3%;
+    flex-shrink: 0;
+
+    position: absolute;
+    margin-left: 315px;
+    top: 235px;
+  }
+
+  .modal-content {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    
+    margin: 275px -10px 0;
+  }
+
+  .modal-content .modal-img {
+    
+  }
+
+  .modal-number .number-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    
+    position: absolute;
+    margin-top: 87px;
+    margin-left: 66.5px;
+  }
+
+  .modal-content .number-slide img {
+    width: 6.6%;
+    height: 6.6%;
+  }
+
+  .number-slide .slide-text .first-text {
+    color: #FFF;
+    text-align: right;
+    font-family: SUIT;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%;
+    letter-spacing: -0.704px;
+    
+  }
+
+  .number-slide .slide-text .second-text {
+    color: #FFF;
+    text-align: right;
+    font-family: SUIT;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.352px;
+    
+  }
+
+
+
+  /***** Click 시, Participating Artist-Modal창 구현 *****/
+  /* .Part-modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    
+    background-color: rgba(0,0,0,0.8); 
+    
+  }
+
+  .Part-modal .modal-closen {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    position: absolute;
+    margin-left: 315px;
+    top: 180px;
+  }
+
+  .modal-contents {
+    display: flex;
+    width: 330px;
+    height: 429px;
+    padding: 20px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    flex-shrink: 0;
+
+    background: #FFF;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 230px;
+  }
+
+  .modal-contents .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+
+    width: 300px;
+  }
+
+  .modal-contents .modal-header .header-text {
+    color: #000;
+    font-family: SUIT;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 100%;
+
+    width: 166px;
 
     
   }
 
-  /* Swipe할 때, 메인 이미지에 Round animation */
-  .promotion .swiper-slide {
-      width: 100%;
-      background-color: white;
-      overflow: hidden;
-      
-      &.swiper-slide-active {
-          img {
-            border-bottom-right-radius: 30%;
-            transition: .8s;
-          }
-      }
+  .modal-contents .modal-header span {
+    height: 1px;
+    flex: 1 0 0;
+
+    border: 1px solid lightgray;
+  }
+
+  .modal-contents .modal-artist {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+
+  .modal-contents .modal-artist span {
+    color: #000;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 150%;
+    letter-spacing: -0.264px;
+  } */
+
+
+
+  /************** footer **************/
+  .footer {
+    margin: 96px 15px 0 15px;
+
+    display: flex;
+    width: 100%;
+    height: 453px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-shrink: 0;
+    
+    border-top: 1px solid lightgray; 
+  }
+
+
+  .footer-icons {
+    
+  }
+
+  .footer-icons ul {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+
+    gap: 46.67px;
+  }
+
+  .footer .footer-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.264px;
+  }
+
+
+}
+
+
+
+
+
+/***********************************************************************/
+@media (min-width: 441px) and (max-width: 1001px) {
+  .Exhibition-wrapper {
+    display: none;
+    
+
+  }
+
+  .poster-title {
+    max-width: 100%;
+    margin-top: 10%;
+}
+
+  .poster-section,
+  .poster-img {
+    max-width: 100%;
+    margin-left: 10%;
+}
+
+
+  .banner {
+  
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* height: 704px; */
+    flex: 1 0 0;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+  
+  .banner-header {
+    width: 100%;
+  }
+
+  .header-style {
+    visibility: hidden;
+  }
+
+  .banner-text {
+    visibility: hidden;
+    display: none;
+  }
+
+  .header-style {
+    display: flex;
+    width: 100%;
+    padding: 17px 87px 22px 87px;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    z-index: 9999;
+  }
+  
+
+  
+  .logo-wrapper {
+    width: 4%;
+    height: 27px;
+    flex-shrink: 0;
+  }
+  
+  .header-style .header-menu .header-ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    
+  }
+  
+  .header-style .header-menu .header-ul .EN {
+    margin-left: 40px;
+    
+  }
+  
+  .header-style .header-menu .header-ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  }
+
+  .header-style {
+    display: none;
+    visibility: hidden;
+  }
+
+  .clone-menu {
+    display: block;
+    visibility: visible;
+  }
+ 
+
+}
+
+
+
+
+
+/**************************************************************************/
+@media (min-width: 1002px) and (max-width: 1919px) {
+  .banner {
+    width: 100%;
+    overflow: hidden;
+  
+    flex: 1 0 0;
+    align-self: stretch;
+  }
+
+  .banner-header {
+    visibility: hidden;
+    display: none;
+  }
+
+  .banner-text {
+    visibility: hidden;
+    display: none;
+  }
+
+  .Arrow-Back-Mobile {
+    display: none;
+  }  
+  
+  .header-style {
+    display: flex;
+    width: 100%;
+    padding: 20px 90px 25px 90px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    
+    position: fixed;
+    z-index: 9999;
+    
+  }
+
+  .Ex-img {
+    margin-top: 100px;
+  }
+
+
+  .logo-wrapper {
+    width: 4%;
+    height: 27px;
+    flex-shrink: 0;
+  }
+  
+  .header-style .header-menu .header-ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    
+  }
+  
+  .header-style .header-menu .header-ul .EN {
+    margin-left: 40px;
+    
+  }
+  
+  .header-style .header-menu .header-ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  }
+
+
+}
+
+
+
+
+
+
+/***************************** Web (1920px) ********************************/
+@media (min-width: 1920px) {
+  .wrapper {
+    display: none;
+    visibility: visible;
+  }
+
+  .Web-container {
+    display: block;
+    visibility: visible;
+  }
+
+  .Web-container {
+    max-width: 1920px;
+  }
+
+  .banner {
+  
+    width: 100%;
+    overflow: hidden;
+    /* height: 955px; */
+    flex: 1 0 0;
+    align-self: stretch;
+  }
+  
+  .banner-header {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .header-style {
+    display: block;
+    visibility: visible;
+
+    display: flex;
+    width: 100%;
+    padding: 20px 90px 25px 90px;
+    justify-content: space-between;
+    align-items: center;
+  
+    position: fixed;
+    z-index: 9999;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .header-menu .Ex-header:hover,
+  .header-menu .At-header:hover,
+  .header-menu .Ne-header:hover,
+  .header-menu .Pu-header:hover,
+  .header-menu .AU-header:hover,
+  .header-menu .EN:hover {
+    font-weight: 900;
+  }
+  
+  .header-menu .header-ul a .EN {
+    margin-left: 40px;
+  }
+
+  .logo-wrapper {
+    width: 4%;
+    height: 27px;
+    flex-shrink: 0;
+  }
+  
+  .header-style .header-menu .header-ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    
+  }
+  
+  .header-style .header-menu .header-ul .EN {
+    margin-left: 40px;
+    
+  }
+  
+  .header-style .header-menu .header-ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  }
+  
+
+  /* Mobile - works-section */
+  /* Web - works-sections  */
+  .Arrow-Back-Mobile,
+  .poster-wrapper,
+  .Installation-view,
+  .Swipe-Modal-Mobile,
+  .works-section,
+  .view-more-Mobile,
+  .footer-Mobile,
+  .to-top-Mobile
+   {
+    visibility: hidden;
+    display: none;
+    overflow: hidden;
+  }
+  
+
+
+  .modal,
+  .Part-modal {
+    display: none;
+    visibility: hidden;
+  }
+
+
+
+  /******* Web-container *******/
+  /* 화살표 뒤로가는 부분 
+  (Home으로 되돌아가는 부분) */
+  .Arrow-Back-Web img {
+    margin-top: 116px;
+    margin-left: 260px;
+  } 
+    
+    
+
+  /******* Web Contants 시작 *******/
+  .Web-container {
+    max-width: 1920px;
+  }
+
+  /******* Ex002 - main-section *******/
+  .main-section {
+    display: flex;
+    width: 72.9%;
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+ 
+    margin: 0 260px 0;
+  }
+
+  /******* Ex002 - title-section *******/
+  .main-section .title-section {
+    align-self: stretch;
+    
+    width: 100%;
+
+    margin-top: 12px;
+  }
+
+  .main-section .title-section .main-title {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 112px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 123.2px */
+    letter-spacing: -2.464px;
+
+    top: 53px;
+
+    position: relative;
+    z-index: 99;
+  }
+
+
+  .main-section .title-section .main-img {
+    margin-top: -295px;
+    margin-left: 238px;
+
+  }
+
+
+  .main-section .title-section .title-date {
+    color: #000;
+    font-family: SUIT;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 38.4px */
+    letter-spacing: -0.704px;
+
+    width: 15%;
+
+    margin-top: -76px;
+  }
+  
+  .main-section .title-section .content-section {
+    display: flex;
+    width: 477px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+
+    max-width: 477px;
+
+    margin-left: 923px;
+    margin-top: -460px;
+  }
+  
+  .main-section .title-section .content-section .artist-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+
+    color: #000;
+    text-align: right;
+    font-family: SUIT;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 54px */
+    letter-spacing: -1.188px;
+
+  }
+
+  .content-section .artist-name .artist-first-name {
+    width: 58.5%;
+  }
+
+  .content-section .artist-name .artist-second-name {
+    width: 27.9%;
+  }
+
+  .content-section .artist-name .artist-third-name {
+    width: 69.2%;
+  }
+
+  
+  .main-section .title-section .content-section
+  .artist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    
+    width: 100%;
+  }
+
+  .main-section .title-section .content-section
+  .artist-info .artist-text {
+    color: #000;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 28.8px */
+    letter-spacing: -0.396px;
+
+  }
+
+
+  .artist-info .info-wrapper {
+    display: flex;
+    width: 72.5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+
+  .main-section .title-section .content-section
+  .artist-info .artist-viewing-room {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+
+    
+  }
+
+  .main-section .title-section .content-section
+  .artist-info .artist-viewing-room {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 22px */
+    letter-spacing: -0.484px;
+    text-transform: uppercase;
+
+  }
+
+  .artist-viewing-room .viewing-room-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+
+    width: 100%;
+  }
+  
+
+
+  .main-section .title-section .content-section
+  .artist-info .artist-download {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .main-section .title-section .content-section
+  .artist-info .artist-download {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 22px */
+    letter-spacing: -0.484px;
+    text-transform: uppercase;
+
+    
+  }
+
+  .aa {
+    position: relative;
+    top: 5px;
+    left: 5px;
+  }
+  
+
+
+  /******* Installation View *******/
+  .Installation-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+    width: 100%;
+  }
+
+  .Installation-header h2 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 100%; /* 90px */
+    letter-spacing: -1.98px;
+
+    width: 28.9%;
+  }
+
+  .Installation-header span {
+    height: 1px;
+    flex: 1 0 0;
+
+    border: 1px solid lightgray;
+
+    width: 69.7%;
+  }
+
+
+  .Installation-section {
+    display: flex;  
+    width: 100%;
+    align-items: flex-start;
+    gap: 28px;
+
+    margin-top: -80px;
+  }
+  
+   
+
+
+
+  /******* Works *******/
+  .works-sections {
+    display: flex;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-sections .works-title {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    align-self: stretch;
+
+    width: 100%;
+  }
+
+  .works-sections .works-title h2 {
+    color: #000;
+    font-family: SUIT;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 150%; /* 135px */
+    letter-spacing: -1.98px;
+
+    /* 원래는 width: 240;인데 글자 레이아웃 맞추기 위해 250으로 늘림 */
+    width: 17.1%;
+  }
+
+  .works-sections .works-title span {
+    height: 1px;
+    flex: 1 0 0;
+    width: 100%;
+
+    border: 1px solid lightgray;
+  }
+  
+
+  /******* Works-img-section *******/
+  .works-img {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 206.5px;
+    align-self: stretch;
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+
+
+  /******* Works-img-first-section *******/
+  .works-img .works-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+
+    width: 23.5%;
+  }
+
+  .works-first-section .first-img {
+    display: flex;
+    padding-bottom: 130px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    
+    width: 100%;
+  }
+
+  .works-first-section 
+  .first-img .first-info {
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    
+    width: 100%;
+  }
+
+  .works-first-section 
+  .first-info .first-one-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 81.2%;
+  }
+
+  .works-first-section .first-img
+  .first-info .first-two-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 13.3%; 
+  }
+
+  .works-first-section .first-img
+  .first-info .first-three-text {
+    overflow: hidden;
+    color: #000;
+    text-align: center;
+    /* text-overflow, white-space를
+    빼야 제대로 나옴 (확인 요망) */
+    /*
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    */
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.308px;
+
+    width: 100%;
+  }
+
+  .works-first-section 
+  .first-info .first-four-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.308px;
+
+    width: 20%;
   }
 
 
 
 
-/***** Click 시, Modal창 구현 *****/
-/*
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  /******* Works-img-second-section *******/
+  .works-img .works-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
 
-  
-  background-color: rgba(0,0,0,0.8); 
-  
+    width: 100%;
+  }
+
+  .works-first-section .second-img {
+    display: flex;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    
+    width: 100%;
+  }
+
+  .works-first-section 
+  .second-img .second-info {
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    
+    width: 100%;
+  }
+
+  .works-first-section 
+  .second-info .first-one-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 81.2%;
+  }
+
+  .works-first-section .second-img
+  .second-info .first-two-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+
+    width: 13.3%;
+  }
+
+  .works-first-section .second-img
+  .second-info .first-three-text {
+    overflow: hidden;
+    color: #000;
+    text-align: center;
+    /* text-overflow, white-space를
+    빼야 제대로 나옴 (확인 요망) */
+    /*
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    */ 
+    font-family: SUIT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.308px;
+
+    width: 100%;
+  }
+
+  .works-first-section .second-img
+  .second-info .first-four-text {
+    color: #000;
+    text-align: center;
+    font-family: SUIT; 
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    letter-spacing: -0.308px;
+
+    width: 20%;
+  }
+
+
+
+/******* Works-img-third-section *******/
+.works-img .works-second-section {
   display: flex;
-  width: 360px;
-  height: 504px;
-  padding: 60px 0px;
-  flex-direction: column;
-  align-items: center;
-  gap: 87px;
-  flex-shrink: 0;
-}
-
-.modal .modal-close {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-
-  margin-left: 315px;
-  margin-top: 20px;
-}
-
-.modal-content {
-  display: flex;
-  width: 360px;
-  padding: 15px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 48px;
+
+  width: 329px;
   
 }
 
-.modal-content .modal-img {
-  
-}
-
-
-.modal-content .number-slide {
+.works-second-section .third-img {
   display: flex;
-  justify-content: center;
+  padding-bottom: 130px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  
+  
+}
+
+.works-second-section 
+.third-img .third-info {
+  display: flex;
+  padding: 0px 10px;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 6px;
+  align-self: stretch;
   
-  margin-top: 87px;
-  margin-left: 96.5px;
+
 }
 
-.modal-content .number-slide img {
-  width: 24px;
-  height: 24px;
-  
-}
-
-.number-slide .slide-text .first-text {
-  color: #FFF;
-  text-align: right;
+.works-second-section 
+.third-info .first-one-text {
+  color: #000;
+  text-align: center;
   font-family: SUIT;
-  font-size: 32px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 100;
-  line-height: 150%;
-  letter-spacing: -0.704px;
-  
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
 }
 
-.number-slide .slide-text .second-text {
-  color: #FFF;
-  text-align: right;
+.works-second-section .third-img
+.third-info .first-two-text {
+  color: #000;
+  text-align: center;
   font-family: SUIT;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.352px;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-second-section .third-img
+.third-info .first-three-text {
+  overflow: hidden;
+  color: #000;
+  text-align: center;
+  /* text-overflow, white-space를
+  빼야 제대로 나옴 (확인 요망) */
+  /*
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  */ 
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
+  letter-spacing: -0.308px;
+
+  width: 309px;
+}
+
+.works-second-section .third-img
+.third-info .first-four-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT; 
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.308px;
+}
+
+
+/******* Works-img-four-section *******/
+.works-img .works-second-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+
+  width: 329px;
   
 }
-*/
+
+.works-second-section .four-img {
+  display: flex;
+  padding-bottom: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  
+  
+}
+
+.works-second-section 
+.four-img .four-info {
+  display: flex;
+  padding: 0px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  
+
+}
+
+.works-second-section 
+.four-info .first-one-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-second-section .four-img
+.four-info .first-two-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-second-section .four-img
+.four-info .first-three-text {
+  overflow: hidden;
+  color: #000;
+  text-align: center;
+  /* text-overflow, white-space를
+  빼야 제대로 나옴 (확인 요망) */
+  /*
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  */ 
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
+  letter-spacing: -0.308px;
+
+  width: 309px;
+}
+
+.works-second-section .four-img
+.four-info .first-four-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT; 
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.308px;
+}
+
+
+
+/******* Works-img-five-section *******/
+.works-img .works-third-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+
+  width: 329px;
+  
+}
+
+.works-third-section .five-img {
+  display: flex;
+  padding-bottom: 130px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  
+  
+}
+
+.works-third-section 
+.five-img .five-info {
+  display: flex;
+  padding: 0px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  
+
+}
+
+.works-third-section 
+.five-info .first-one-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-third-section .five-img
+.five-info .first-two-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-third-section .five-img
+.five-info .first-three-text {
+  overflow: hidden;
+  color: #000;
+  text-align: center;
+  /* text-overflow, white-space를
+  빼야 제대로 나옴 (확인 요망) */
+  /*
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  */ 
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
+  letter-spacing: -0.308px;
+}
+
+.works-third-section .five-img
+.five-info .first-four-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT; 
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.308px;
+}
+
+
+
+/******* Works-img-six-section *******/
+.works-img .works-third-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+
+  width: 329px;
+  
+}
+
+.works-third-section .six-img {
+  display: flex;
+  padding-bottom: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  
+  
+}
+
+.works-third-section 
+.six-img .six-info {
+  display: flex;
+  padding: 0px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  
+
+}
+
+.works-third-section 
+.six-info .first-one-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-third-section .six-img
+.six-info .first-two-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+}
+
+.works-third-section .six-img
+.six-info .first-three-text {
+  overflow: hidden;
+  color: #000;
+  text-align: center;
+  /* text-overflow, white-space를
+  빼야 제대로 나옴 (확인 요망) */
+  /*
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  */ 
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
+  letter-spacing: -0.308px;
+}
+
+.works-third-section .six-img
+.six-info .first-four-text {
+  color: #000;
+  text-align: center;
+  font-family: SUIT; 
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.308px;
+}
+
+
+/***** 이미지 hover시 변화 - ZOOM *****/
+.works-section .works-img .first-img,
+.works-section .works-img .second-img,
+.works-section .works-img .third-img,
+.works-section .works-img .four-img,
+.works-section .works-img .five-img,
+.works-section .works-img .six-img {
+  overflow: hidden; /* 이미지가 확대될 때, 이미지 바 */
+}
+
+.works-section .works-img .first-img-hover,
+.works-section .works-img .second-img-hover,
+.works-section .works-img .third-img-hover,
+.works-section .works-img .four-img-hover,
+.works-section .works-img .five-img-hover,
+.works-section .works-img .six-img-hover {
+  transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  -o-transform: scale(1.0);
+
+  transition: transform 0.7s;
+}
+
+.works-section .works-img .first-img-hover:hover,
+.works-section .works-img .second-img-hover:hover,
+.works-section .works-img .third-img-hover:hover,
+.works-section .works-img .four-img-hover:hover,
+.works-section .works-img .five-img-hover:hover,
+.works-section .works-img .six-img-hover:hover {
+  transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -moz-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  -o-transform: scale(1.06);
+
+  transition: transform 0.7s;
+}
 
 
 
 
+/******* View-more *******/
+.view-more-Web {
+  display: flex;
+  width: 330px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/******* Viewing Room *******/
+.viewing-room {
+  display: flex;
+  padding: 80px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  width: 1920px;
+
+  background: #F2F2F2;
+}
+
+.viewing-room .viewing-text {
+  color: #000;
+  text-align: right;
+  font-family: SUIT;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 24px */
+  letter-spacing: -0.528px;
+  text-transform: uppercase;
+}
+
+
+
+/******* Home화면의 footer *******/
+.footer-Web {
+  margin-top: 234px;
+
+  display: flex;
+  width: 1920px;
+  height: 453px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  flex-shrink: 0;
+  
+  border-top: 1px solid lightgray; 
+}
+
+.footer-icons {
+
+}
+
+.footer-Web .footer-icons ul {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+
+  margin-left: 90px;
+}
+
+
+.footer-Web .footer .footer-text p {
+  color: #000;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.396px;
+
+  width: 563px;
+
+  margin-top: 70px;
+}
+
+.footer-icons .footer-text p {
+  
+}
 
 /***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
-#to-top {
+.to-tops {
   width: 28px;
   height: 28px;
-  background-color: #fff;
-  
+  background-color: #FFF;
 
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  
 
   gap: 6px;
 
-  
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 80px;
+  right: 120px;
 
+  z-index: 9;
 
-  
-  background-image: url('../img/Arrowup_btn.png');
+  background-image: url('../img/To-top-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 99px;
@@ -1148,7 +2616,6 @@ header .inner {
 }
 
 .material-icons {
-  
   font-size: 30px;
   height: 24px;
   position: absolute;
@@ -1162,48 +2629,178 @@ header .inner {
 }
 
 
-/* 동그란 버튼 구현중에 막힘 */
-/*
+/******* Swiper - margin이든 padding이든 임의로 정한 값 *******/
 .promotion {
-    width: 330px;
-    
-    
-  }
+  display: flex;
+  padding-left: 15px;
+  align-items: flex-end;
+  gap: 6px;
+  align-self: stretch; 
+  
+}
+
+.swiper-container {
+  max-width: 1500px;
+  
+}
+
+.swiper-slide {
+  max-width: 1500px;
+  
+}
+
+.swiper.wrapper {
+  
+}
+
+.swiper-slide {
+  
+}
+
+.swiper-slide .swiper-img {
 
   
+}
+
+.promotion .swiper-pagination {
+  margin-top: 50px;
+  margin-left: 660px;
   
-  
+}
 
-
-
-
-  .promotion .swiper-pagination {
-    margin-top: 20px;
-    margin-left: 138px;
-  }
-
-  .promotion .swiper-container .swiper-wrapper .swiper-slide {
-    
-    
-  }
+.promotion .swiper-container {
+  margin-bottom: 30px;
   
 
-  .promotion .swiper-pagination .swiper-pagination-bullet {
-    background-image: url('./img/promotion_slide_pager.png');
-    width: 12px;
-    height: 12px;
-    margin-right: 16px;
-    outline: none;
-  }
+}
 
-  .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
-    margin-right: 0;
-  }
+.promotion .swiper-pagination .swiper-pagination-bullet {
+  background-image: url('./img/promotion_slide_pager.png');
+  width: 12px;
+  height: 12px;
+  margin-right: 16px;
+  outline: none;
+}
 
-  .promotion .swiper-pagination .swiper-pagination-bullet-active {
-    background-image: url("./img/swiper_activebullet.png");
-  }
-*/
+.promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+
+.promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("./img/swiper_activebullet.png");
+}
+
+
+
+
+/***** Click 시, Swipe-img-Modal창 구현 *****/
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999;
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+
+}
+
+
+
+/***** 모달이 자연스럽게 아래에서 위로 뜨기 위해서 만든 코드
+.modal {
+transform: translateY(100%);
+transition: transform 0.7s ease-in-out;
+}
+
+.show {
+transform: translateY(0);
+
+}
+*****/
+
+
+.modal .modal-close {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  margin-left: 1612px;
+  margin-top: 40px;
+}
+
+.modal .modal-close img {
+  cursor: pointer;
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+
+  margin: 0 506px 0;
+}
+
+
+
+.modal-content .number-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  margin-left: 250px;
+  margin-top: 60px;
+}
+
+
+.number-slide .slide-text .first-text {
+  color: #FFF;
+  text-align: right;
+  font-family: SUIT;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 150%; /* 48px */
+  letter-spacing: -0.704px;
+
+}
+
+
+.number-slide .slide-text .second-text {
+  color: #FFF;
+  text-align: right;
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.352px;
+
+}
+
+
+.content-section .artist-name {
+  cursor: pointer;
+}
+
+.to-top-Mobile {
+  visibility: hidden;
+  display: none;
+}
+
+
+
+  
+}
+
+
+
 
 
 

@@ -1,0 +1,813 @@
+/* Reset */
+html {
+    --color-white: #FFF;
+    --color-black: #000000;
+    --color-font: #1D1D1D;
+    --color-font-darkgray: #6E6E6E;
+    --color-font-middlegray: #b7b7b7;
+    --color-font-lightgray: #F5F5F5;
+    --color-link: #0071E3;
+    --color-link-focus: #81B9F1;
+    --color-border: #D2D2D2;
+    --color-header: #3A3A3A;
+    --color-section: #F5F5F5;
+    --color-shadow: rgba(0, 0, 0, .4);
+  }
+  
+  h1,
+  h2,
+  p,
+  strong,
+  body,
+  ul,
+  li,
+  div {
+  padding: 0;
+  margin: 0;
+  }
+  
+  h1,
+  h2,
+  p,
+  strong {
+  font-size: inherit;
+  font-weight: inherit;
+  }
+  
+  li {
+  list-style: none;
+  }
+  
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  header ul.menu > li.menu-starter {
+    display: none;
+  }
+  
+  
+  /*** 하이퍼 링크 속성 제거 ***/
+  a {
+  text-decoration: none;
+  color: inherit;
+  }
+  
+  
+  
+  /******* Typography *******/
+  @font-face {
+    font-family: 'SUIT';
+    
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2');
+  }
+  
+  /* 이 부분을 지워서 위의 코드 내용
+  @font-face {
+    font-family: 'SUIT';
+  
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2');
+  }
+  */ 
+  
+  /***************** Layout *****************/
+  
+  /* 이 부분의 때문에 Arrow-back이 안보이고 있었음 */
+  .header-section .main-header {
+    position: fixed;
+  
+    /* 모든 컨텐츠가 헤더위로 올라가지 않도록 최상위로 줌 */
+    z-index: 9999;
+  }
+  
+  
+  
+  
+  
+  
+  /***************** Web Layout *****************/
+    @media (max-width: 1920px) {
+    /* 모바일 720까지의레이아웃 */ 
+    .wrapper {
+      width: 1920px;
+      
+  
+      /* 하단의 top으로 올라오는 to-top버튼을
+      보여드리기 위해서 임의로 height: 500vh 정도로
+      지정함 - 원래는 height: 1047px */
+      
+      
+    }
+  
+    .wrapper .head-wrapper {
+      /* Figma에는 width의 값이 
+      모바일 기준 360px으로 잡고 가는건데,
+      브라우저에서는 최대로 줄일 때,
+      433px이 되서
+      이미지 가로를 최대로 채우기 위해
+      width값을 임의의 값인 96.2vw로 줬다.*/
+      width: 1920px;
+  
+      border-radius: 0px 0px 100px 0px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
+      background-size: cover;
+    }
+  
+    .header-section {
+      width: 100%;
+      
+      top: 0;
+      position: relative;
+    } 
+  
+    .Header-img {
+      box-sizing: border-box;
+      width: 100%;
+      
+      
+      z-index: -9;
+    }
+  
+    .Header-img img {
+      
+      
+    }
+  
+    .main-header {
+      top: 0;
+    }
+  
+    .header-style {
+      background: #FFF;
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+  
+      display: flex;
+      width: 1920px;
+      padding: 25px 90px 30px 90px;
+      justify-content: space-between;
+      align-items: center; 
+    }
+  
+  
+  
+    header .white-logo {
+      width: 87.429px;
+      height: 27px;
+      flex-shrink: 0;
+      /* Figma 개발자 모드 사용하기 전
+      width: 20vw;
+      margin: 30px 0 0 30px;
+      */
+    }
+  
+  
+    .header-menu .header-ul {
+      display: flex;
+      align-items: flex-start;
+      gap: 70px;
+  
+      color: #000000;
+      text-align: center;
+      font-family: SUIT;
+      font-size: 18px; 
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;   /* 27px */
+      letter-spacing: -0.396px;
+    }
+   
+    .header-menu .Ex-header:hover,
+    .header-menu .At-header:hover,
+    .header-menu .Ne-header:hover,
+    .header-menu .Pu-header:hover,
+    .header-menu .AU-header:hover,
+    .header-menu .EN:hover {
+      font-weight: 900;
+    }
+  
+  
+    .header-menu .header-ul a .EN {
+        margin-left: 40px;
+    }
+    
+  
+    /* 화살표 뒤로가는 부분 
+    (Home으로 되돌아가는 부분) */
+    .Arrow-Back img {
+      margin-top: 116px;
+      margin-left: 260px;
+    } 
+  
+  
+  
+    /******* AboutUs-wrapper *******/
+    .Publication-title h1 {
+      color: #000;
+      font-family: Montserrat;
+      font-size: 84px;
+      font-style: normal;
+      font-weight: 250;
+      line-height: 150%; /* 126px */
+      letter-spacing: -2.772px;
+  
+      width: 361px;
+  
+      margin-top: 72px;
+      margin-left: 260px;
+    }
+  
+    
+    /******* AboutUs-section *******/
+    .AboutUs-wrapper {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 230px;
+  
+      width: 1916px;
+  
+      margin-top: 160px;
+    }
+  
+    .AboutUs-wrapper .AboutUs-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 90px;
+  
+      width: 1916px;
+    }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-header-section {
+      width: 1400px;
+      height: 588px;
+    }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-header-section .border {
+      width: 1px;
+      flex: 1 0 0;
+      background: #CECECE;
+  
+      height: 468px;
+  
+      margin-left: 853px;
+      margin-top: -468px;
+  }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-header-section .AboutUs-border {
+      width: 1px;
+      flex: 1 0 0;
+  
+      background: #CECECE;
+  }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-header-section .header-header  {
+      color: #000;
+      text-align: right; 
+      font-family: SUIT;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 72px */
+      letter-spacing: -1.056px;
+  
+      margin-top: -606px;
+    }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-header-section .header-text  {
+      color: #000;
+      font-family: SUIT;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 36px */
+      letter-spacing: -0.528px;
+  
+      width: 475px;
+      
+      margin-top: 70px;
+      margin-left: 925px;
+    }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-view-img {
+      display: flex;
+      width: 1916px;
+      padding: 80px 0px;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+  
+    }
+  
+    .AboutUs-wrapper .AboutUs-header .AboutUs-view-img span {
+      color: #000;
+      text-align: right;
+      font-family: SUIT;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%; /* 24px */
+      letter-spacing: -0.528px;
+      text-transform: uppercase;
+  
+    }
+  
+    .Rowiart-section {
+      width: 1400px;
+      height: 989px;
+    }
+  
+    .Rowiart-section .Rowiart-title {
+      color: #000;
+      font-family: SUIT;
+      font-size: 130px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 130%; /* 169px */
+      letter-spacing: -2.86px;
+  
+      width: 374px;
+      
+    }
+  
+    .Rowiart-section .Rowiart-img {
+      position: relative;
+  
+      left: 782px;
+      bottom: 675px;
+      
+  
+    }
+  
+    .Rowiart-section .Rowiart-info  {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 30px;
+  
+      width: 805px;
+  
+      display: block;
+  
+      margin-left: 600px;
+      margin-top: -650px;
+  
+      
+    }
+  
+    .Rowiart-section .Rowiart-info .Rowiart-text {
+      color: #000;
+      font-family: SUIT;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 180%; /* 28.8px */
+      letter-spacing: -0.352px;
+  
+      width: 608px;
+  
+      margin-top: -100px;
+  
+      border-top: 1px solid #D9D9D9;
+    }
+  
+    .Rowiart-section .Rowiart-info .Rowiart-text p {
+      margin-top: 50px;
+    }
+  
+    .Rowiart-move {
+      position: absolute;
+  
+      top: 3680px;
+      left: 1400px;
+    }
+  
+    .Rowiart-move img {
+      width: 22px;
+      height: 22px;
+  
+      position: absolute;
+      margin-left: 8px;
+      margin-top: -3px;
+    }
+  
+  
+    .contact-section {
+      display: flex;
+      width: 1400px;
+      justify-content: space-between;
+      align-items: flex-start;
+  
+      margin-top: 40px;
+    }
+  
+    .contact-section .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      align-self: stretch;
+    }
+  
+    .contact-section .contact-info .contact-title {
+      color: #000;
+      font-family: SUIT;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%; /* 57.2px */
+      letter-spacing: -1.144px;
+  
+      width: 476px;
+    }
+  
+    .contact-section .contact-info .contact-email {
+      color: #000;
+      font-family: SUIT;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: 150%; /* 75px */
+      letter-spacing: -1.1px;
+  
+      width: 476px;
+    }
+  
+    .contact-section .contact-info img {
+      width: 80px;
+      height: 80px;
+  
+      margin-left: -15px;
+    }
+  
+    .contact-section .contact-img {
+      height: 324px;
+      flex-shrink: 0;
+      align-self: stretch;
+  
+      position: absolute;
+      top: 450px;
+      
+    }
+  
+    .contact-section .contact-img span {
+      color: #FFF;
+      text-align: right;
+      font-family: SUIT;
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: 70%; /* 70px */
+      letter-spacing: -2.2px;
+      
+      position: absolute;
+      right: -0.5px;
+      bottom: 0px;
+    }
+  
+  
+    .JoinUs-section {
+      display: flex; 
+      width: 805px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+  
+    .JoinUs-section .JoinUs-title {
+      color: #000;
+      font-family: SUIT;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 75px */
+      letter-spacing: -1.1px;
+  
+      width: 805px;
+  
+      border-top: 1px solid #000;
+    }
+  
+    .JoinUs-section .JoinUs-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      align-self: stretch;
+  
+      width: 805px;
+  
+      margin-top: 30px;
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-email {
+      display: flex;
+      width: 805px;
+      justify-content: space-between;
+      align-items: flex-start;
+  
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-email span {
+      color: #D0D0D0;
+      font-family: SUIT;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 42px */
+      letter-spacing: -0.616px;
+  
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-email img {
+      margin-top: 15px;
+  
+    }
+  
+  
+    .JoinUs-section .JoinUs-info .JoinUs-name {
+      display: flex;
+      width: 805px;
+      justify-content: space-between;
+      align-items: flex-start;
+      
+    }
+  
+  .JoinUs-section .JoinUs-info .JoinUs-name span {
+      color: #D0D0D0;
+      font-family: SUIT;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 42px */
+      letter-spacing: -0.616px;
+  
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-name img {
+      margin-top: 15px;
+  
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-phone-number {
+      color: #D0D0D0;
+      font-family: SUIT;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 42px */
+      letter-spacing: -0.616px;
+      
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-message {
+      color: #D0D0D0;
+      font-family: SUIT;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 42px */
+      letter-spacing: -0.616px;
+      
+  
+      width: 805px;
+      height: 213px;
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-send {
+      display: flex;
+      width: 805px;
+      padding-top: 50px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      
+    }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-send .send-button {
+      display: flex;
+      width: 310px;
+      padding: 12px 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      color: #FFF;
+      background-color: #000;
+      text-align: center;
+      
+      border-top: none;
+  }
+  
+    .JoinUs-section .JoinUs-info .JoinUs-send .send-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      border-top: none;
+      background-color: #FFF;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+      border-radius: var(--color-black);
+      -webkit-border-radius: var(--color-black);
+      -moz-border-radius: var(--color-black);
+      -ms-border-radius: var(--color-black);
+      -o-border-radius: var(--color-black);
+  }
+  
+  .JoinUs-section .JoinUs-info .JoinUs-send .send-button:hover::before {
+    border-top: none;
+    transform: translateX(0);
+  
+    color: #FFF;
+  
+    border-radius: var(--color-black);
+      -webkit-border-radius: var(--color-black);
+      -moz-border-radius: var(--color-black);
+      -ms-border-radius: var(--color-black);
+      -o-border-radius: var(--color-black);
+  }
+  
+  .JoinUs-section .JoinUs-info .JoinUs-send .send-button:hover {
+    border-top: none;
+    color: #000;
+  
+    border-radius: var(--color-black);
+      -webkit-border-radius: var(--color-black);
+      -moz-border-radius: var(--color-black);
+      -ms-border-radius: var(--color-black);
+      -o-border-radius: var(--color-black);
+  }
+  
+  .JoinUs-section .JoinUs-info .JoinUs-send .send-button span {
+    border-radius: var(--color-black);
+    -webkit-border-radius: var(--color-black);
+    -moz-border-radius: var(--color-black);
+    -ms-border-radius: var(--color-black);
+    -o-border-radius: var(--color-black);
+  
+  
+    border-top: none;
+    position: relative;
+    z-index: 1;
+    
+  }
+  
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  /* Home화면의 footer */
+  .footer {
+    margin-top: 309px;
+  
+    display: flex;
+    width: 1920px;
+    height: 453px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-shrink: 0;
+  
+    border-top: 1px solid lightgray; 
+  }
+  
+  
+  .footer-icons {
+  
+  }
+  
+  .footer-icons ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 150px;
+  
+  }
+  
+  .footer .footer-text  {
+    width: 563px;
+    height: 27px;
+  
+    margin-left: 20px;
+  }
+  
+  .footer .footer-text p {
+    color: #000;
+    font-family: SUIT;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.396px;
+  
+  
+  }
+  
+  .footer-icons .footer-text p {
+  
+  }
+  
+  
+  
+  /***** 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 *****/
+  #to-top {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+  
+  
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+    gap: 6px;
+  
+  
+    position: fixed;
+    bottom: 40px;
+    right: 80px;
+  
+  
+  
+    background-image: url('../img/Arrowup_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  }
+  
+  .material-icons {
+  
+    font-size: 30px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 3px;
+    right: 4px;
+    margin: auto;
+    /* opacity: 1; -> 화살표가 잘 보임 */
+    opacity: 1;
+    transition: 0.4s; 
+  }
+  
+  
+  /* 동그란 버튼 구현중에 막힘 */
+  /*
+  .promotion {
+    width: 330px;
+    
+    
+  }
+  
+  
+  
+  
+  
+  .promotion .swiper-pagination {
+    margin-top: 20px;
+    margin-left: 138px;
+  }
+  
+  .promotion .swiper-container .swiper-wrapper .swiper-slide {
+    
+    
+  }
+  
+  
+  .promotion .swiper-pagination .swiper-pagination-bullet {
+    background-image: url('./img/promotion_slide_pager.png');
+    width: 12px;
+    height: 12px;
+    margin-right: 16px;
+    outline: none;
+  }
+  
+  .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+  }
+  
+  .promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-image: url("./img/swiper_activebullet.png");
+  }
+  */
+  
+  
+  
+  

@@ -81,7 +81,7 @@ a {
         height: 30px;
         flex-shrink: 0;
 
-        margin: 20px 15px 0 315px;
+        margin: 30px 15px 0 315px;
     }
 
 
@@ -94,7 +94,7 @@ a {
         justify-content: center;
         align-items: center;
         
-        margin-top: 20px;
+        
     }
 
     .wrapper .img-wrapper .img-section {
@@ -264,7 +264,7 @@ a {
 
     /************** footer **************/
     .footer {
-        margin-top: 79px;
+        margin-top: 88px;
   
         display: flex;
         width: 360px;

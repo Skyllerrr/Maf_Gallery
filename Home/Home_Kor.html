@@ -47,9 +47,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
 
-    <link rel="stylesheet" href="./Home_Style.css">
+    <link rel="stylesheet" href="./Home_Kor_Style.css">
+    <script defer type="module" src="../JS/Click_to_contact_Kor.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
-    <script defer type="module" src="../JS/scroll.js"></script>
+    <script defer type="module" src="../JS/scroll_home.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
 </head>
 
@@ -58,44 +59,42 @@
     <div class="wrapper">
         <section class="head-wrapper">
             <header class="header-section">
-                <div class="main-header">
+                <div class="main-header" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
 
                     <div class="header-style">
                         <div class="logo-wrapper">
-                            <a href="../Home-Web/Home.html">
+                            <a href="../Home/Home_Kor.html">
                                 <img class="white-logo" src="../img/header-logo-white.png" alt="">
                             </a>
                         </div>
-            
-                        <div class="header-menu">
-                            <ul class="header-ul">
-                                <a href="../Exhibition-Web/Exhibition_001.html">
-                                    <li class="Ex-header">Exhibitions</li>
-                                </a>
-
-                                <a href="../Artist-Web/Artist_001.html">
-                                    <li class="At-header">Artists</li>
-                                </a>
-
-                                <a href="../News-Web/News.html">
-                                    <li class="Ne-header">News</li>
-                                </a>
-
-                                <a href="../Publication-Web/Publication.html">
-                                    <li class="Pu-header">Publication</li>
-                                </a>
-
-                                <a href="../AboutUs-Web/AboutUs.html">
-                                    <li class="AU-header">About Us</li>
-                                </a>
-
-                                <a href="javascript:void(0)">
-                                    <li class="EN">EN</li>
-                                </a>
-                            </ul>
+                        <div>
+                            <img class="header-hamburger" src="../img/Header_Hamburger.png" alt="">
                         </div>
                     </div>
-                    
+
+                    <div class="clone-menu">
+                        <div class="clone-in-menu">
+
+                            <div class="Toggle_lang">
+                                <a href="./Home.html">EN</a>
+                            </div>
+
+                            <div class="Toggle_close">   
+                                <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            </div>
+                            
+                        </div>
+                        <ul class="clone-ul">
+                            <li class="one"><a href="../Exhibition/Exhibition_001_Kor.html">전시</a></li>
+                            <li class="two"><a href="../Artist/Artist_001_Kor.html">작가</a></li> 
+                            <li class="three"><a href="../News/News_Kor.html">소식</a></li>
+                            <li class="four"><a href="../Publication/Publication_Kor.html">출판</a></li>
+                            <li class="five"><a href="../AboutUs/AboutUs_Kor.html">소개</a></li>
+                        </ul>
+                    </div>
 
                 </div>
                 
@@ -120,21 +119,43 @@
                     </div>        
                 </div>
                 -->
-
                 
                     <div class="Header-img">
-                        <img src="../img/Web-Home-banner.png" alt="">
+                        <img src="../img/Home_img.png" alt="">
                     </div>
 
-                    
+                    <div class="header-info" data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="550"
+                    data-aos-duration="1000">
+                        <h2>Artist name</h2>
+                        <span>artwork title</span>
+                        <span>through june 29, 2024</span>
+                    </div>
                 </header>
         </section>
 
-        
+
             
+            <div class="inner">
+                <ul class="menu">
+                    <li class="menu-starter">
+                        <a>
+                            <div>
+                                <span></span>
+                                <span></span>
+                                <span></span>            
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
             
     </div>
     
+
+    <!-- Footer에 AOS Animation을 적용하면 헤더보다 상위로 넘쳐남 (수정 요망) -->
     <section class="footer">
         <span></span>
         <div class="footer-icons">
@@ -144,26 +165,23 @@
                         <img src="../img/Insta_logo.png" alt="">
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <img src="../img/Facebook_logo.png" alt="">
-                    </a>
+                
+                <li>           
+                    <img class="to-contact-Kor" src="../img/Email-icon-Mobile.png" alt=""> 
                 </li>
+
                 <li>
                     <a href="">
                         <img src="../img/Youtube_logo.png" alt="">
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <img src="../img/Twit_logo.png" alt="">
-                    </a>
-                </li>
+                
             </ul>
         </div>
 
         <div class="footer-text">
-            <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu, Seoul, Republic of Korea</p>
+            <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu,</p>
+            <p>Seoul, Republic of Korea</p>
         </div>
     </section>
 
@@ -176,13 +194,13 @@
     <!--
     <header class="sub-header">
         <img src="./img/Mobile-SubLogo.png" alt="">
-        <diss="inner">
+        <div class="inner">
             
             <ul class="menu">
                 <li class="menu-starter">
                     <a>
                         <div>
-                     v cla       <span></span>
+                            <span></span>
                             <span></span>
                             <span></span>
                         </div>
@@ -190,7 +208,7 @@
                 </li>
 
             </ul>
-        </diss=>
+        </div>
 
         <div class="clone-menu">
             <ul class="clone-ul">

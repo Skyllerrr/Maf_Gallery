@@ -57,6 +57,8 @@
 
     
     <link rel="stylesheet" href="./Artist_002_style.css">
+    <script defer type="module" src="../JS/Click_to_contact.js"></script>
+    <script defer type="module" src="../JS/Click_to_Exhibitions_Works.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -104,8 +106,13 @@
 
                     <div class="clone-menu">
                         <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            <div class="Toggle_lang">
+                                <a href="./Artist_002_Kor.html">KR</a>
+                            </div>
+                            
+                            <div class="Toggle_close">
+                                <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            </div>
                         </div>
                         <ul class="clone-ul">
                             <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
@@ -115,11 +122,13 @@
                             <li class="five"><a href="../AboutUs/AboutUs.html">About Us</a></li>
                         </ul>
                     </div>
-
                 </div>
                 
                 
-                <div class="Arrow-Back">
+                <div class="Arrow-Back" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="150"
+                data-aos-duration="1000">
                     <a href="../Exhibition/Exhibition_001.html">
                         <img src="../img/Arrow-back.png" alt="">
                     </a>
@@ -129,7 +138,10 @@
         </section>
 
         <!----- Artists002-main-section ----->
-        <section class="main-wrapper">
+        <section class="main-wrapper" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <section class="artist-wrapper">
 
                 <div class="artist-info">
@@ -177,7 +189,10 @@
         </section>
 
         <!----- Artists002-Exhibition ----->
-        <a href="../Exhibition/Exhibition_002.html">
+        <a href="../Exhibition/Exhibition_002.html" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <section class="artist-exhibition">
                 <div class="ex-title">
                     <div class="ex-main-title">
@@ -192,8 +207,20 @@
                     <img src="../img/Artist002-Exhibition-img-Mobile.png" alt="">
                 </div>
 
+                <div class="ex-info">
+                    <h2>TITLE: Exhibition name</h2>
+                    <span>Group Exhibition</span>
+                    <div class="info-text">
+                        <span class="text-detail">10 Jan - 17 Feb 2024</span>
+                        <span class="text-origin">Seoul</span>
+                    </div>
+                </div>
+
                 <div class="ex-readmore-wrapper">
-                    <div class="ex-readmore">
+                    <div class="ex-readmore" data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="150"
+                    data-aos-duration="1000">
                         <a href="">
                             <img src="../img/Aritst-readmore.png" alt="">
                         </a>
@@ -203,7 +230,10 @@
         </a>
 
         <!----- Artists002-Works ----->
-        <section class="artist-works">
+        <section class="artist-works" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="works-title">
                 <div class="works-main-title">
                     <div class="ex-main-border">
@@ -338,6 +368,11 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
+
+                    <li>
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
+                    </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
@@ -362,5 +397,8 @@
 
     </div>
 
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

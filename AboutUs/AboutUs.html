@@ -57,6 +57,8 @@
 
     
     <link rel="stylesheet" href="./AboutUs_style.css">
+    <script defer type="module" src="../JS/Click_to_contact.js"></script>
+    <script defer type="module" src="../JS/Click_to_contact.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -104,8 +106,13 @@
 
                     <div class="clone-menu">
                         <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            <div class="Toggle_lang">
+                                <a href="./AboutUs_Kor.html">KR</a>
+                            </div>
+                            
+                            <div class="Toggle_close">
+                                <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            </div>
                         </div>
                         <ul class="clone-ul">
                             <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
@@ -119,7 +126,10 @@
                 </div>
                 
                 
-                <div class="Arrow-Back">
+                <div class="Arrow-Back" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="150"
+                data-aos-duration="1000">
                     <a href="../Exhibition/Exhibition_001.html">
                         <img src="../img/Arrow-back.png" alt="">
                     </a>
@@ -130,7 +140,10 @@
 
 
         <!-- rowi-art-main-title -->
-        <section class="main-header">
+        <section class="main-header" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="main-title">
                 About Us
             </div> 
@@ -138,7 +151,10 @@
         
         
         <!-- rowi-art-main-section -->
-        <section class="AboutMaf-section">
+        <section class="AboutMaf-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="section-header">
                 <div class="main-header">
                     About MAF
@@ -165,13 +181,19 @@
         </section>
 
         <!-- rowi-art-border-section -->
-        <section class="border-section">
+        <section class="border-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <img src="../img/AboutUs-border.png" alt="">
         </section>
 
 
         <!-- rowi-art-img & rowi-art-text-section -->
-        <section class="rowi-art-section">
+        <section class="rowi-art-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="object-section">
                 <img src="../img/object-img.png" alt="">
             </div>
@@ -200,7 +222,11 @@
          
 
         <!-- rowi-art-contact -->
-        <section class="contact-section">
+        
+        <section id="bottom" class="contact-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="contact-info">
                 <div class="contact-title">
                     <h3>1600 Pennsylvania Avenue NW, Washington, D.C. <br>20500, U.S.</h3>
@@ -219,13 +245,13 @@
             </div>
         </section>
 
-        <section>
-
-        </section>
 
 
         <!-- rowi-art-join Us -->
-        <section class="joinUs-section">
+        <section class="joinUs-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        data-aos-duration="1000">
             <div class="joinUs-title">
                 <span class="first-border"></span>
                 <span class="tt">Join Us</span>
@@ -250,7 +276,7 @@
             </div>
 
             <div class="joinUs-message">
-                <p>message : 문의 할 사항...</p>
+                <p>message : 문의사항이 있으시면 남겨주세요</p>
             </div>
 
             <div class="joinUs-button">
@@ -271,6 +297,11 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
+                    
+                    <li>           
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
+                    </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
@@ -294,5 +325,8 @@
         
     </div>
 
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

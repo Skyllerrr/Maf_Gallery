@@ -56,7 +56,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     
-    <link rel="stylesheet" href="./Publication_style.css">
+    <link rel="stylesheet" href="./Publication_style_Web.css">
+    <script defer type="module" src="../JS/Click_to_contact_Web.js"></script>
+    <script defer type="module" src="../JS/hoverchange.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -72,122 +74,229 @@
 </head>
 <body>
     <div class="wrapper">
-
-        <div class="inner">
-            <ul class="menu">
-                <li class="menu-starter">
-                    <a>
-                        <div>
-                            <span></span>
-                            <span></span>
-                            <span></span>            
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
         <section class="head-wrapper">
             <header class="header-section">
                 <div class="main-header">
 
                     <div class="header-style">
                         <div class="logo-wrapper">
-                            <a href="../Home/Home.html">
-                                <img class="white-logo" src="../img/MafLogo_Green1.png" alt="">
+                            <a href="../Home-Web/Home_Web.html">
+                                <img class="white-logo" src="../img/MafLogo-Green-Web.png" alt="">
                             </a>
                         </div>
-                        <div>
-                            <img class="header-hamburger" src="../img/hamburger-menu-black.png" alt="">
+            
+                        <div class="header-menu">
+                        
+                            <ul class="header-ul">
+                                <a href="../Exhibition-Web/Exhibition_001_Web.html">
+                                    <li class="Ex-header">Exhibitions</li>
+                                </a>
+
+                                <a href="../Artist-Web/Artist_001_Web.html">
+                                    <li class="At-header">Artists</li>
+                                </a>
+
+                                <a href="../News-Web/News_Web.html">
+                                    <li class="Ne-header">News</li>
+                                </a>
+
+                                <a href="../Publication-Web/Publication_Web.html">
+                                    <li class="Pu-header">Publication</li>
+                                </a>
+
+                                <a href="../AboutUs-Web/AboutUs_Web.html">
+                                    <li class="AU-header">About Us</li>
+                                </a>
+
+                                <a href="./Publication_Web_Kor.html">
+                                    <li class="EN">KR</li>
+                                </a>
+                            </ul>
+
                         </div>
                     </div>
+                    
 
+                </div>
+                
+                <!--
+                <div class="sub-header">
+                    <a href="/Home.html">
+                        <img class="Green-logo" src="./img/MafLogo_Green.png" alt="">
+                    </a>
+                    <img class="header-hamburger-black" src="./img/Hamburger_Menu_Black.png" alt="">
                     <div class="clone-menu">
                         <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            <img class="Toggle_EN" src="./img/Toggle_EN.png" alt="" onclick={}>
+                            <img class="Toggle_Close" src="./img/Close_btn.png" alt="">
                         </div>
                         <ul class="clone-ul">
-                            <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
-                            <li class="two"><a href="../Artist/Artist_001.html">Artists</a></li>
-                            <li class="three"><a href="../News/News.html">News</a></li>
-                            <li class="four"><a href="../Publication/Publication.html">Publication</a></li>
-                            <li class="five"><a href="../AboutUs/AboutUs.html">About Us</a></li>
+                            <li class="one"><a href="./Exhibition_001.html">Exhibitions</a></li>
+                            <li class="two"><a href="javascript:void(0)">Artists</a></li>
+                            <li class="three"><a href="javascript:void(0)">News</a></li>
+                            <li class="four"><a href="javascript:void(0)">Publication</a></li>
+                            <li class="five"><a href="javascript:void(0)">About Us</a></li>
                         </ul>
-                    </div>
-
+                    </div>        
                 </div>
+                -->
                 
-                
-                <div class="Arrow-Back">
-                    <a href="../Exhibition/Exhibition_001.html">
-                        <img src="../img/Arrow-back.png" alt="">
-                    </a>
-                </div>
-
+                    
                 </header>
         </section>
 
-        
-        <section class="main-header">
-            <div class="main-title">
-                Publication
-            </div> 
-        </section>
-        
-        <section class="publication-wrapper"> 
-
-          <div class="pub-first-section">
-             <div class="first-img">
-                <img src="../img/Publication-first-img.png" alt="">
-             </div>
-             <div class="first-info">
-               <span class="first-text">2022</span>
-               <h3 class="second-text">김종철 사진집</h3>
-               <span class="third-text">LAMPLAB</span>
-               <span class="four-text">ISBN 979-11-977162-2-5</span>
-             </div>
-          </div>
-
-          
-          <div class="pub-second-section">
-            <div class="first-img">
-                <img src="../img/Publication-second-img.png" alt="">
-             </div>
-             <div class="first-info">
-               <span class="first-text">2022</span>
-               <h3 class="second-text">김종철 사진집</h3>
-               <span class="third-text">LAMPLAB</span>
-               <span class="four-text">ISBN 979-11-977162-2-5</span>
-             </div>
-          </div>
-          
-          <div class="pub-third-section">
-            <div class="first-img">
-              <img src="../img/Publication-third-img.png" alt="">
-           </div>
-           <div class="first-info">
-             <span class="first-text">2022</span>
-             <h3 class="second-text">김종철 사진집</h3>
-             <span class="third-text">LAMPLAB</span>
-             <span class="four-text">ISBN 979-11-977162-2-5</span>
-           </div>
-          </div>
-
-
-          <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
-          <div class="view-more">
-            <a href="javascript:void(0)">
-                <img src="../img/view-more-img.png" alt="">
+        <!----- Arrow-Back ----->
+        <div class="Arrow-Back">
+            <a href="../Home-Web/Home_Web.html">
+                <img src="../img/Arrow-back.png" alt="">
             </a>
-          </div>
+        </div>
+
+        
+        <!------- Publication-Section ------->
+        <section class="Publication-title" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+            <h1>Publication</h1>
+        </section>
+            
+        <section class="News-section" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+
+            <div class="News-section-header">
+                <div class="header-info">
+                    <ul>
+                        <li>Publication</li>
+                        <li>/</li>
+                        <li>2023 Column</li>
+                        <li>/</li>
+                        <li>2022 Column</li>
+                        <li>/</li>
+                        <li>Article</li> 
+                        <li class="last">VIEW ALL</li>
+                    </ul> 
+                </div>
+            </div>
+
+            <section class="news-img-section">
+                <div  class="one-section">
+                    <img src="../img/Publication-first-Web-img.png" alt="">
+
+                    <div class="one-info">
+                        <div class="one-year">2022</div>
+
+                        <div class="one-title">
+                            <h3>김종철 사진집</h3>
+                        </div>
+
+                        <div class="one-text">
+                            <span class="first-span">LAMPLAB</span>
+
+                            <span class="second-span">ISBN 979-11-977162-2-5</span>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="one-section">
+                    <img src="../img/Publication-second-Web-img.png" alt="">
+
+                    <div class="one-info">
+                        <div class="one-year">2022</div>
+
+                        <div class="one-title">
+                            <h3>김종철 사진집</h3>
+                        </div>
+
+                        <div class="one-text">
+                            <span class="first-span">LAMPLAB</span>
+
+                            <span class="second-span">ISBN 979-11-977162-2-5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="one-section" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <img src="../img/Publication-third-Web-img.png" alt="">
+
+                    <div class="one-info">
+                        <div class="one-year">2022</div>
+
+                        <div class="one-title">
+                            <h3>김종철 사진집</h3>
+                        </div>
+
+                        <div class="one-text">
+                            <span class="first-span">LAMPLAB</span>
+
+                            <span class="second-span">ISBN 979-11-977162-2-5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="one-section" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <img src="../img/Publication-four-Web-img.png" alt="">
+
+                    <div class="one-info">
+                        <div class="one-year">2022</div>
+
+                        <div class="one-title">
+                            <h3>김종철 사진집</h3>
+                        </div>
+
+                        <div class="one-text">
+                            <span class="first-span">LAMPLAB</span>
+
+                            <span class="second-span">ISBN 979-11-977162-2-5</span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="one-section" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <img src="../img/Publication-five-Web-img.png" alt="">
+
+                    <div class="one-info">
+                        <div class="one-year">2022</div>
+
+                        <div class="one-title">
+                            <h3>김종철 사진집</h3>
+                        </div>
+
+                        <div class="one-text">
+                            <span class="first-span">LAMPLAB</span>
+
+                            <span class="second-span">ISBN 979-11-977162-2-5</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <!-- view-more을 클릭했을 때, 링크 있어야 함 -->
+            <div class="view-more">
+                <a href="javascript:void(0)">
+                    <img src="../img/view-more-img.png" alt="">
+                </a>
+            </div>
 
         </section>
-    
+
         
 
-
-        <!----- Footer ----->
+        <!-- Footer -->
         <section class="footer">
             <span></span>
             <div class="footer-icons">
@@ -197,38 +306,38 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
-                    <li>
-                        <a href="">
-                            <img src="../img/Facebook_logo.png" alt="">
-                        </a>
+
+                    <li>           
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
                     </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
                         </a>
                     </li>
-                    <li>
-                        <a href="">
-                            <img src="../img/Twit_logo.png" alt="">
-                        </a>
-                    </li>
                 </ul>
             </div>
-
+    
             <div class="footer-text">
-                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu,</p>
-                <p>Seoul, Republic of Korea</p>
+                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu, Seoul, Republic of Korea</p>
             </div>
         </section>
 
-        <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
-        <div id="to-top">
-            <div class="material-icons"></div>
-        </div>
 
-        
-        
+    </section>
+
+
+    <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
+    <div id="to-top">
+        <div class="material-icons"></div>
     </div>
 
+            
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

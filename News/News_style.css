@@ -431,23 +431,26 @@ header .clone-menu {
     margin-left: 95px;
   }
 
-
-
   
-  /************** View-Dropdown **************/
-  /* 브라우저? 화면?에 따라 View-Dropdown의 높이와
-  margin이 조금씩 달라지는데 확인 해봐야함 */
-  .news-wrapper {
-    display: flex;
-    width: 330px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 50px;
+  /******* Dropdown *******/
+  .View-All-Dropdown {
+    position: relative;
+    display: inline-block;
 
-    margin: 37px 15px 0;
+    margin-top: 39px;
+    margin-left: 15px;
+    margin-bottom: 50px;
   }
 
-  .View-All-Dropdown {
+  .dropdown-button {
+    color: #000;
+    background-color: #FFF;
+    
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
     display: flex;
     width: 330px;
     padding: 6px 10px;
@@ -455,21 +458,47 @@ header .clone-menu {
     align-items: center;
     gap: 10px;
 
-    
+    z-index: 99;
+}
+
+  .View-All-Dropdown img {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    right: 10px;
+    top: 5.5px;
+  }
+
+  .dropdown-button:hover {
     
   }
 
-  .View-All-Dropdown .View-All {
-    color: #000;
-    font-family: SUIT;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 27px */
-    letter-spacing: -0.396px;
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 330px;
+    text-align: center;
 
-    
-    padding: 0 123px 0;
+    top: 33px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+  }
+  
+  .dropdown-content a {
+    color: lightgray;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    color: #000;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
   }
 
 
@@ -483,7 +512,7 @@ header .clone-menu {
     align-self: stretch;
     flex-wrap: wrap;
 
-    
+    margin-left: 15px;
   }
 
 
@@ -692,6 +721,7 @@ header .clone-menu {
   
   padding: 10px 10px 10px 10px;
   
+  margin-top: 50px;
   margin-bottom: 91px;
 }
 

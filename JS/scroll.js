@@ -1,4 +1,4 @@
-const toTopEl = document.querySelector('#to-top');
+const toTopEl = document.querySelector('.to-top-Mobile .to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
     console.log(window.scrollY);

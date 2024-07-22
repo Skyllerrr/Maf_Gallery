@@ -57,6 +57,8 @@
 
     
     <link rel="stylesheet" href="./AboutUs_style_Web.css">
+    <script defer type="module" src="../JS/Click_to_contact_Web.js"></script>
+    <script defer type="module" src="../JS/hoverchange.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -72,196 +74,252 @@
 </head>
 <body>
     <div class="wrapper">
-
-        <div class="inner">
-            <ul class="menu">
-                <li class="menu-starter">
-                    <a>
-                        <div>
-                            <span></span>
-                            <span></span>
-                            <span></span>            
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
         <section class="head-wrapper">
             <header class="header-section">
                 <div class="main-header">
 
                     <div class="header-style">
                         <div class="logo-wrapper">
-                            <a href="../Home/Home.html">
-                                <img class="white-logo" src="../img/MafLogo_Green1.png" alt="">
+                            <a href="../Home-Web/Home_Web.html">
+                                <img class="white-logo" src="../img/MafLogo-Green-Web.png" alt="">
                             </a>
                         </div>
-                        <div>
-                            <img class="header-hamburger" src="../img/hamburger-menu-black.png" alt="">
+            
+                        <div class="header-menu">
+                        
+                            <ul class="header-ul">
+                                <a href="../Exhibition-Web/Exhibition_001_Web.html">
+                                    <li class="Ex-header">Exhibitions</li>
+                                </a>
+
+                                <a href="../Artist-Web/Artist_001_Web.html">
+                                    <li class="At-header">Artists</li>
+                                </a>
+
+                                <a href="../News-Web/News_Web.html">
+                                    <li class="Ne-header">News</li>
+                                </a>
+
+                                <a href="../Publication-Web/Publication_Web.html">
+                                    <li class="Pu-header">Publication</li>
+                                </a>
+
+                                <a href="../AboutUs-Web/AboutUs_Web.html">
+                                    <li class="AU-header">About Us</li>
+                                </a>
+
+                                <a href="./AboutUs_Web_Kor.html">
+                                    <li class="EN">KR</li>
+                                </a>
+                            </ul>
+
                         </div>
                     </div>
+                    
 
+                </div>
+                
+                <!--
+                <div class="sub-header">
+                    <a href="/Home.html">
+                        <img class="Green-logo" src="./img/MafLogo_Green.png" alt="">
+                    </a>
+                    <img class="header-hamburger-black" src="./img/Hamburger_Menu_Black.png" alt="">
                     <div class="clone-menu">
                         <div class="clone-in-menu">
-                            <img class="Toggle_EN" src="../img/Toggle_EN.png" alt="" onclick={}>
-                            <img class="Toggle_Close" src="../img/Close_btn.png" alt="">
+                            <img class="Toggle_EN" src="./img/Toggle_EN.png" alt="" onclick={}>
+                            <img class="Toggle_Close" src="./img/Close_btn.png" alt="">
                         </div>
                         <ul class="clone-ul">
-                            <li class="one"><a href="../Exhibition/Exhibition_001.html">Exhibitions</a></li>
-                            <li class="two"><a href="../Artist/Artist_001.html">Artists</a></li>
-                            <li class="three"><a href="../News/News.html">News</a></li>
-                            <li class="four"><a href="../Publication/Publication.html">Publication</a></li>
-                            <li class="five"><a href="../AboutUs/AboutUs.html">About Us</a></li>
+                            <li class="one"><a href="./Exhibition_001.html">Exhibitions</a></li>
+                            <li class="two"><a href="javascript:void(0)">Artists</a></li>
+                            <li class="three"><a href="javascript:void(0)">News</a></li>
+                            <li class="four"><a href="javascript:void(0)">Publication</a></li>
+                            <li class="five"><a href="javascript:void(0)">About Us</a></li>
                         </ul>
-                    </div>
-
+                    </div>        
                 </div>
+                -->
                 
-                
-                <div class="Arrow-Back">
-                    <a href="../Exhibition/Exhibition_001.html">
-                        <img src="../img/Arrow-back.png" alt="">
-                    </a>
-                </div>
-
+                    
                 </header>
         </section>
 
+        <!----- Arrow-Back ----->
+        <div class="Arrow-Back">
+            <a href="../Home-Web/Home_Web.html">
+                <img src="../img/Arrow-back.png" alt="">
+            </a>
+        </div>
 
-        <!-- rowi-art-main-title -->
-        <section class="main-header">
-            <div class="main-title">
-                About Us
-            </div> 
+        
+        <!------- Publication-Section ------->
+        <section class="Publication-title" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+            <h1>About Us</h1>
         </section>
-        
-        
-        <!-- rowi-art-main-section -->
-        <section class="AboutMaf-section">
-            <div class="section-header">
-                <div class="main-header">
-                    About MAF
+            
+        <section class="AboutUs-wrapper" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+
+            <section class="AboutUs-header">
+                <div class="AboutUs-header-section">
+                    <img src="../img/AboutUs-header-Web-img.png" alt="">
+
+                    <div class="border">
+                        <img class="AboutUs-border" src="../img/AboutUs-Web-border.png" alt="">
+                    </div>
+
+                    <div class="header-header">
+                        <h2>About MAF</h2>
+                    </div>
+
+                    <div class="header-text">
+                        <p>MAF 는<br>
+                            친근하고 흥미로운 이야기의 장을 펼칩니다. 예술과 과학의 접점에서 새로운 경험을 추구합니다. 예술을 통해 모두의 예술적 삶을 지향합니다.<br><br>현대 예술 작품에 대한 이해와 함께 문화예술 전반에 걸친 화두를 심리적 관점에서 해석합니다.<br><br>삶을 작품처럼 가꾸어 나가기 위해 생각과 마음의 근육을 키워갑니다.<br><br>친교와 공감의 가치를 존중하는 분들과 귀한 시간을 나눕니다.</p>
+                    </div>
                 </div>
-                <span></span>
-            </div>
-            <div class="section-img">
-                <img src="../img/AboutUs-header-img.png" alt="">
-            </div>
-            <div class="section-container">
-                <div class="container-text">
-                    <p>MAF는 <br>친근하고 흥미로운 이야기의 장을 펼칩니다. 예술과 과학의 접점에서 새로운 경험을 추구합<br>니다.<br>
-                        예술을 통해 모두의 예술적 삶을 지향합니다. <br><br>현재 예술 작품에 대한 이해와 함께 문화예<br>술 전반에 걸친 화두를
-                        심리적 관점에서 해석합니다. <br><br>삶을 작품처럼 가꾸어 나가기 위해 생각과 마음의 근육을 키워갑니다.<br><br>
-                        친교와 공감의 가치를 존중하는 분들과 귀<br>한 시간을 나눕니다.</p>
-                </div>
-                <div class="container-gotour">
+
+                <div class="AboutUs-view-img" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <img src="../img/AboutUs-view-img.png" alt="">
+
                     <span>마프 전시장 3D 투어</span>
-                    <a href="javascript:void(0)">
-                        <img src="../img/ViewingRoom-into.png" alt="">
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- rowi-art-border-section -->
-        <section class="border-section">
-            <img src="../img/AboutUs-border.png" alt="">
-        </section>
-
-
-        <!-- rowi-art-img & rowi-art-text-section -->
-        <section class="rowi-art-section">
-            <div class="object-section">
-                <img src="../img/object-img.png" alt="">
+            <div class="AboutUs-center-border" data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000">
+                <img src="../img/AboutUs-center-border.png" alt="">
             </div>
-            <div class="rowi-art-title">
-                <h2>Rowi art foun-dation</h2>
-            </div>
-            <div class="rowi-art-text">
-                <div class="rowi-art-info">
-                    <span></span>
-                    <p>AI를 활용한 공간형 웹 빌더를 통해 실재하는 공간부터 가상 공간까지 모든 공간에 Value를 더하는 로위랩코리아 산하 아트 파운데이션입니다.
-                        <br><br>
-                        Rowi Art Foundation은 로위랩의 아트&테<br>크놀로지 레거시를 기반으로 작가의 예술 활동<br>을 다각적으로 지원합니다.
-                        <br><br>
-                        온라인 오픈스튜디오 플랫폼 보글맨션 오프라인 전시&소통 공간 갤러리 마프 국제 레지던시 프로그램 소금같은, 예술<br><br>
-                        
-                        RowiLAB Art Foundation은 온라인 플랫폼을 통해 시공간의 한계를 뛰어넘어 작가를 소개하며, 오프라인 갤러리를 통해 작가의 작품을 피로하고, 레지던시 프로그램을 통해 국제 교류를 도모합니다.</p>
+
+            <section class="Rowiart-section" data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000">
+                <div class="Rowiart-title">
+                    <h3>Rowi<br>art foun- dation</h3>
                 </div>
-                <div class="container-gosite">
-                    <span>아트파운데이션 사이트 이동</span>
-                    <a href="javascript:void(0)">
-                        <img src="../img/ViewingRoom-into.png" alt="">
-                    </a>
+
+                <div class="Rowiart-img-wrapper">
+                    <img class="Rowiart-img" src="../img/Rowiart-img.png" alt="">
                 </div>
-            </div>
-        </section>
-         
-
-        <!-- rowi-art-contact -->
-        <section class="contact-section">
-            <div class="contact-info">
-                <div class="contact-title">
-                    <h3>1600 Pennsylvania Avenue NW, Washington, D.C. <br>20500, U.S.</h3>
-                </div>
-                <div class="contact-account">
-                    <span>MAF@example.com</span>
-                </div>
-                <div class="contact-icon">
-                    <img src="../img/AboutUs-contact-icon.png" alt="">
-                </div>
-            </div>
-
-            <div class="contact-img">
-                <img src="../img/AboutUs-contact-img.png" alt="">
-                <h3>Contact</h3>
-            </div>
-        </section>
-
-        <section>
-
-        </section>
-
-
-        <!-- rowi-art-join Us -->
-        <section class="joinUs-section">
-            <div class="joinUs-title">
-                <span class="first-border"></span>
-                <span class="tt">Join Us</span>
-                <span class="second-border"></span>
-            </div>
-
-            <div class="joinUs-email">
-                <p>email@example.com</p>
-                <img src="../img/AboutUs-star-icon.png" alt="">
                 
-            </div>
 
-            <div class="joinUs-name">
-                <p>name</p>
-                <img src="../img/AboutUs-star-icon.png" alt="">
-               
-            </div>
+                <div class="Rowiart-info" data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <div class="Rowiart-text">
+                        <p>AI를 활용한 공간형 웹 빌더를 통해 실재하는 공간부터 가상 공간까지 모든 공간에 Value를 더하는<br> 로위랩코리아 산하 아트 파운데이션입니다.<br><br>
 
-            <div class="joinUs-phonenumber">
-                <p>phone number</p>
-                
-            </div>
+                            Rowi Art Foundation은 로위랩의 아트&테크놀로지 레거시를 기반으로 작가의 예술 활동을 다각적<br>으로 지원합니다.<br><br>
+                            
+                            온라인 오픈스튜디오 플랫폼 보글맨션 오프라인 전시&소통 공간 갤러리 마프 국제 레지던시 프로그램<br> 소금같은, 예술<br><br>
+                            
+                            RowiLAB Art Foundation은 온라인 플랫폼을 통해 시공간의 한계를 뛰어넘어 작가를 소개하며, 오<br>프라인 갤러리를 통해 작가의 작품을 피로하고, 레지던시 프로그램을 통해 국제 교류를 도모합니다.</p>
+                            <div id="bottom"></div>
+                    </div>
 
-            <div class="joinUs-message">
-                <p>message : 문의 할 사항...</p>
-            </div>
+                    <div class="Rowiart-move">
+                        <span>아트파운데이션 사이트 이동</span>
+                        <img src="../img/Rowiart-icon.png" alt="">
+                    </div>
+                </div>    
+            </section>
 
-            <div class="joinUs-button">
-                <span>SEND</span>
-            </div>
+
+            <section class="contact-section" data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="350"
+            data-aos-duration="1000">
+                <div class="contact-info">
+                    <div class="contact-title">
+                        <h3>1600 Pennsylvania Avenue NW, Washington, D.C. 20500, U.S.</h3>
+                    </div>
+
+                    <div class="contact-email">
+                        <span>MAF@example.com</span>
+                    </div>
+
+                    <img src="../img/Rowiart-email.png" alt="">
+
+                    
+                </div>
+
+                <div class="contact-img">
+                    <img src="../img/Rowiart-contact-img.png" alt="">
+
+                    <span>Contact</span>
+                </div>
+
+
+
+                <section class="JoinUs-section">
+                    <div class="JoinUs-title">
+                        <h3>Join Us</h3>
+                    </div>
+
+                    <section class="JoinUs-info">
+                        <div class="JoinUs-email">
+                            <span>email@example.com</span>
+
+                            <img src="../img/JoinUs-star.png" alt="">
+                        </div>
+
+                        <div>
+                            <img src="../img/Contact-underline.png" alt="">
+                        </div>
+
+                        <div class="JoinUs-name">
+                            <span>name</span>
+
+                            <img src="../img/JoinUs-star.png" alt="">
+                        </div>
+
+                        <div>
+                            <img src="../img/Contact-underline.png" alt="">
+                        </div>
+
+                        <div class="JoinUs-phone-number">
+                            <span>phone number</span>
+                        </div>
+
+                        <div>
+                            <img src="../img/Contact-underline.png" alt="">
+                        </div>
+
+                        <div class="JoinUs-message">
+                            <span>message</span>
+                        </div>
+
+                        <div>
+                            <img src="../img/Contact-underline.png" alt="">
+                        </div>
+
+                        <div class="JoinUs-send">
+                            <div class="send-button">
+                                <span>SEND</span>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+            </section>
+
+
         </section>
+  
 
-
-
-
-        <!----- Footer ----->
+        <!-- Footer -->
         <section class="footer">
             <span></span>
             <div class="footer-icons">
@@ -271,38 +329,37 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
-                    <li>
-                        <a href="">
-                            <img src="../img/Facebook_logo.png" alt="">
-                        </a>
+
+                    <li>           
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
                     </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
                         </a>
                     </li>
-                    <li>
-                        <a href="">
-                            <img src="../img/Twit_logo.png" alt="">
-                        </a>
-                    </li>
                 </ul>
             </div>
-
+    
             <div class="footer-text">
-                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu,</p>
-                <p>Seoul, Republic of Korea</p>
+                <p>5th Floor, T & S Building, 33 Seoae-ro, Jung-gu, Seoul, Republic of Korea</p>
             </div>
         </section>
+    
 
-        <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
-        <div id="to-top">
-            <div class="material-icons"></div>
-        </div>
+    </section>
 
-        
-        
+
+    <!-- 스크롤 내릴 시, 꼭대기로 올라가는 top 버튼 -->
+    <div id="to-top">
+        <div class="material-icons"></div>
     </div>
 
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

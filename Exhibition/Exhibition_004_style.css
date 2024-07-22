@@ -192,7 +192,7 @@ a {
         font-family: SUIT;
         font-size: 22px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 120%; /* 26.4px */
         letter-spacing: -0.484px;
         
@@ -322,7 +322,6 @@ a {
     position: fixed;
     bottom: 15px;
     right: 15px;
-  
   
     
     background-image: url('../img/Arrowup_btn.png');

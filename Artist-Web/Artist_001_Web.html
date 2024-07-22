@@ -57,6 +57,8 @@
 
     
     <link rel="stylesheet" href="./Artist_001_style_Web.css">
+    <script defer type="module" src="../JS/Click_to_contact_Web.js"></script>
+    <script defer type="module" src="../JS/hoverchange.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -90,24 +92,24 @@
                                     <li class="Ex-header">Exhibitions</li>
                                 </a>
 
-                                <a href="../Artist-Web/Artist_001.html">
+                                <a href="../Artist-Web/Artist_001_Web.html">
                                     <li class="At-header">Artists</li>
                                 </a>
 
-                                <a href="../News-Web/News.html">
+                                <a href="../News-Web/News_Web.html">
                                     <li class="Ne-header">News</li>
                                 </a>
 
-                                <a href="../Publication-Web/Publication.html">
+                                <a href="../Publication-Web/Publication_Web.html">
                                     <li class="Pu-header">Publication</li>
                                 </a>
 
-                                <a href="../AboutUs-Web/AboutUs.html">
+                                <a href="../AboutUs-Web/AboutUs_Web.html">
                                     <li class="AU-header">About Us</li>
                                 </a>
 
-                                <a href="javascript:void(0)">
-                                    <li class="EN">EN</li>
+                                <a href="./Artist_001_Web_Kor.html">
+                                    <li class="EN">KR</li>
                                 </a>
                             </ul>
 
@@ -151,15 +153,21 @@
         </div>
 
 
-        <div class="artist-title">
+        <div class="artist-title" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
             <h1>Artists</h1>
         </div>
 
-        <div class="artist-name">
+        <div class="artist-name" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
             <a href="./Artist_002_Web.html">
                 <span>안지산</span>
             </a>
-            <span>부지현</span>
+            <span class="hover-text-test">부지현</span> 
             <span>변순철</span>
             <span>뷰엔 칼루바얀</span>
             <span>천치앙</span> 
@@ -172,17 +180,23 @@
             <span>가오레이</span>
         </div>
 
-        <div class="artist-img">
-            <img src="../img/Artist-main-img.png" alt="">
+
+        <!----- 여러가지의 이미지를 지정해서 Artist의 name을 hover할 시, 이미지가 변경 ----->
+        <div class="artist-img" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+            <img class="gizone" src="../img/Artist-main-img.png" alt="">
+            
+            <!--
+            <img class="change" src="../img/Artist-Exhibition-img.png" alt="">
+            -->
         </div>
 
         
         <!------- Artist-001-main-section -------> 
         <!------- 페이지에서 중앙의 모든 섹션이라는 뜻 ------->
         <section class="main-section">
-
-            
-
             
             
 
@@ -199,6 +213,11 @@
                             <img src="../img/Insta_logo.png" alt="">
                         </a>
                     </li>
+
+                    <li>           
+                        <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
+                    </li>
+
                     <li>
                         <a href="">
                             <img src="../img/Youtube_logo.png" alt="">
@@ -227,5 +246,8 @@
             
     </div>
 
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

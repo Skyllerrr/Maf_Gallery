@@ -3,12 +3,13 @@ const headerEl = document.querySelector('header')
 const headerMenuEls = [...headerEl.querySelectorAll('ul.menu > li')]
 
 
-
 const menuStarterEl = document.querySelector('header .header-hamburger')
 
 /*
 const menuStarterEll = document.querySelector('header .header-hamburgerr')
 */
+
+
 
 const menuCloseEl = document.querySelector('header .Toggle_Close')
 
@@ -25,7 +26,7 @@ function playScroll() {
 menuCloseEl.addEventListener('click', () => {
   if (headerEl.classList.contains('menuing')) {
     headerEl.classList.remove('menuing')
-    stopScroll()
+    playScroll()
     
   } else {
     headerEl.classList.add('menuing')

@@ -260,6 +260,7 @@ a {
       width: 100%;
       
       
+      
       z-index: -9;
     }
 
@@ -313,9 +314,17 @@ a {
       line-height: 150%;   /* 27px */
       letter-spacing: -0.396px;
 
-      
     }
    
+    .header-menu .header-ul .Ex-header:hover,
+    .header-menu .header-ul .At-header:hover,
+    .header-menu .header-ul .Ne-header:hover,
+    .header-menu .header-ul .Pu-header:hover,
+    .header-menu .header-ul .AU-header:hover,
+    .header-menu .header-ul .EN:hover {
+      font-weight: 700;
+    }
+
 
 
     .header-menu .header-ul a .EN {
@@ -516,8 +525,8 @@ a {
 
     
     position: fixed;
-    bottom: 80px;
-    right: 120px;
+    bottom: 40px;
+    right: 80px;
 
     
     background-image: url('../img/Arrowup_btn.png');

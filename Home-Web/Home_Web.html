@@ -48,6 +48,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
 
     <link rel="stylesheet" href="./Home_style_Web.css">
+    <script defer type="module" src="../JS/Click_to_contact_Web.js"></script>
     <script defer type="module" src="../JS/move.js"></script>
     <script defer type="module" src="../JS/scroll.js"></script>
     <script defer type="module" src="../JS/menuing.js"></script>
@@ -76,24 +77,24 @@
                                     <li class="Ex-header">Exhibitions</li>
                                 </a>
 
-                                <a href="../Artist-Web/Artist_001.html">
+                                <a href="../Artist-Web/Artist_001_Web.html">
                                     <li class="At-header">Artists</li>
                                 </a>
 
-                                <a href="../News-Web/News.html">
+                                <a href="../News-Web/News_Web.html">
                                     <li class="Ne-header">News</li>
                                 </a>
 
-                                <a href="../Publication-Web/Publication.html">
+                                <a href="../Publication-Web/Publication_Web.html">
                                     <li class="Pu-header">Publication</li>
                                 </a>
 
-                                <a href="../AboutUs-Web/AboutUs.html">
+                                <a href="../AboutUs-Web/AboutUs_Web.html">
                                     <li class="AU-header">About Us</li>
                                 </a>
 
-                                <a href="javascript:void(0)">
-                                    <li class="EN">EN</li>
+                                <a href="./Home_Web_Kor.html">
+                                    <li class="EN">KR</li>
                                 </a>
                             </ul>
                         </div>
@@ -128,7 +129,10 @@
                         <img src="../img/Web-Home-banner.png" alt="">
                     </div>
 
-                    <div class="header-info">
+                    <div class="header-info" data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000">
                         <h2>Artist name</h2>
                         <span>artwork title</span>
                         <span>through june 29, 2024</span>
@@ -141,10 +145,7 @@
             
     </div>
     
-    <section class="footer" data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="550"
-    data-aos-duration="1000">
+    <section class="footer">
         <span></span>
         <div class="footer-icons">
             <ul>
@@ -153,6 +154,11 @@
                         <img src="../img/Insta_logo.png" alt="">
                     </a>
                 </li>
+
+                <li>           
+                    <img class="to-contact" src="../img/Email-icon-Mobile.png" alt=""> 
+                </li>
+
                 <li>
                     <a href="">
                         <img src="../img/Youtube_logo.png" alt="">

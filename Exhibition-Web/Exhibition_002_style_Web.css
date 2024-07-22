@@ -55,13 +55,13 @@ a {
 }
 
 
-/* Typography */
-/* 현재 header에만 SUIT 폰트 적용 X - 수정 요망 */
-body {
+/******* Typography *******/
+@font-face {
   font-family: 'SUIT';
-
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2');
-} 
+  font-weight: 100;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2');
+}
 
 
 
@@ -167,6 +167,15 @@ body {
       line-height: 150%;   /* 27px */
       letter-spacing: -0.396px;
     }
+
+    .header-menu .header-ul .Ex-header:hover,
+    .header-menu .header-ul .At-header:hover,
+    .header-menu .header-ul .Ne-header:hover,
+    .header-menu .header-ul .Pu-header:hover,
+    .header-menu .header-ul .AU-header:hover,
+    .header-menu .header-ul .EN:hover {
+      font-weight: 700;
+    }
    
   
   
@@ -176,7 +185,7 @@ body {
     
   
   
-    /* 화살표 뒤로가는 부분 
+  /* 화살표 뒤로가는 부분 
   (Home으로 되돌아가는 부분) */
   .Arrow-Back img {
     margin-top: 116px;
@@ -243,7 +252,7 @@ body {
     font-family: SUIT;
     font-size: 32px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 120%; /* 38.4px */
     letter-spacing: -0.704px;
 
@@ -262,7 +271,7 @@ body {
     width: 477px;
 
     margin-left: 923px;
-    margin-top: -454px;
+    margin-top: -456px;
   }
   
   .main-section .title-section .content-section .artist-name {
@@ -277,9 +286,11 @@ body {
     font-family: SUIT;
     font-size: 54px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 100%; /* 54px */
     letter-spacing: -1.188px;
+
+    margin-left: 171px;
   }
 
   
@@ -299,7 +310,7 @@ body {
     font-family: SUIT;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 160%; /* 28.8px */
     letter-spacing: -0.396px;
 
@@ -475,7 +486,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 58px;
+    gap: 48px;
 
     width: 329px;
     
@@ -537,7 +548,7 @@ body {
     /*
     text-overflow: ellipsis;
     white-space: nowrap;
-    */ 
+    */
     font-family: SUIT;
     font-size: 14px;
     font-style: normal;
@@ -725,6 +736,8 @@ body {
   font-weight: 400;
   line-height: 100%; /* 14px */
   letter-spacing: -0.308px;
+
+  width: 309px;
 }
 
 .works-second-section .third-img
@@ -814,6 +827,8 @@ body {
   font-weight: 400;
   line-height: 100%; /* 14px */
   letter-spacing: -0.308px;
+
+  width: 309px;
 }
 
 .works-second-section .four-img
@@ -1148,28 +1163,24 @@ body {
 
 
 
-/***** Click 시, Modal창 구현 *****/
+/***** Click 시, Swipe-img-Modal창 구현 *****/
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed;
+  display: none; 
+  position: fixed; 
   z-index: 9999;
+  padding-top: 60px; 
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
 
-  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-
-  width: 1920px;
-  height: 100%;
-  flex-shrink: 0;
-
-  fill: #000;
-  opacity: 1;
-
-  
 }
 
+
+
+/***** 모달이 자연스럽게 아래에서 위로 뜨기 위해서 만든 코드
 .modal {
   transform: translateY(100%);
   transition: transform 0.7s ease-in-out;
@@ -1177,9 +1188,9 @@ body {
 
 .show {
   transform: translateY(0);
- 
+  
 }
-
+*****/
 
 
 .modal .modal-close {
@@ -1189,7 +1200,6 @@ body {
 
   margin-left: 1612px;
   margin-top: 40px;
-
 }
 
 .modal .modal-close img {
@@ -1198,29 +1208,14 @@ body {
 
 
 .modal-content {
-  display: flex;
-  width: 1400px;
-  height: 682px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
 
-  margin: 128px 260px 0;
+  margin: 0 506px 0;
 }
 
-.modal-content .modal-img {
-  display: flex;
-  width: 1400px;
-  height: 682px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  
-}
 
 
 .modal-content .number-slide {
@@ -1229,7 +1224,10 @@ body {
   align-items: center;
   gap: 40px;
   
+  margin-left: 250px;
+  margin-top: 60px;
 }
+
 
 .number-slide .slide-text .first-text {
   color: #FFF;
@@ -1257,8 +1255,110 @@ body {
 }
 
 
+.content-section .artist-name {
+  cursor: pointer;
+}
 
 
+/***** Click 시, Participating Artist-Modal창 구현 *****/
+.Part-modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  
+  background-color: rgba(0,0,0,0.8); 
+  
+}
+
+.Part-modal .modal-closen {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+
+  position: absolute;
+  left: 1612px;
+  top: 40px;
+
+  cursor: pointer;
+}
+
+.modal-contents {
+  display: flex;
+  width: 1200px;
+  height: 693px;
+  padding: 40px 70px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+  flex-shrink: 0;
+
+  background: #FFF;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+  margin-left: 360px;
+  margin-right: 360px;
+  margin-top: 128px;
+}
+
+.modal-contents .modal-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  align-self: stretch;
+
+  width: 1060x;
+}
+
+.modal-contents .modal-header .header-text {
+  color: #000;
+  font-family: SUIT;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 90%; /* 30px */
+
+  width: 410px;
+  
+}
+
+.modal-contents .modal-header span {
+  height: 1px;
+  flex: 1 0 0;
+
+  border: 1px solid #D9D9D9;
+}
+
+.modal-contents .modal-artist {
+  display: flex;
+  width: 1060px;
+  height: 478px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 40px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.modal-contents .modal-artist span {
+  color: #000;
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.352px;
+}
+
+
+
+.modal-content .modal-img {
+  
+}
 
 
 
